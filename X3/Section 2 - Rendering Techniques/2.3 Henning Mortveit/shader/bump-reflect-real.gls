@@ -1,0 +1,70 @@
+/*
+
+  Assumptions: we receive world coordinates through the GL.
+
+*/
+
+{GLSL Vertex Shader}
+
+varying vec4 pos;
+varying vec2 tex;
+
+void main()
+{
+  gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;  
+  pos = gl_Vertex;
+  tex = gl_MultiTexCoord0.xy;
+}
+
+
+{GLSL Fragment Shader}
+
+uniform float h;   // Average distance object-reflector
+uniform float ratio; // 
+uniform mat4 Te;   // Texture matrix (texgen) for reflection image
+uniform mat3 M;    // Frenet frame [T|B|N]
+uniform vec3 E;    // viewpoint 
+uniform vec3 Er;   // reflected viewpoint
+uniform vec3 N;    // Normal 
+
+uniform sampler2D baseTexture;       // 
+uniform sampler2D normalMap;         //
+uniform sampler2D reflectionTexture; //
+
+varying vec4 pos;  // Fragment position
+varying vec2 tex;  // Shared texcoordinate for base texture and normalmap
+
+void main()
+{
+  // base color
+  vec4 CBase = texture2D(baseTexture, tex);
+
+  // fragment normal in tangent space
+  vec3 n1 = 2.0*((texture2D(normalMap, tex)).xyz) - 1.0;
+
+  // world aligned fragment normal
+  vec3 N1 = M*n1; 
+
+  // normalized fragment position
+  vec3 x = pos.xyz/pos.w;
+
+  // view vector
+  vec3 V = E - x.xyz; 
+
+  // view vector reflected about fragment normal
+  vec3 VN1 = -reflect(V, N1);
+
+  // reflection image point
+  vec3 P1 = x + (h/dot(VN1, N)) * VN1;
+
+  // modified fragment position
+  vec4 x1 = vec4( mix(Er, P1, ratio), 1.0);	
+
+  vec4 CRefl = texture2DProj(reflectionTexture, Te*x1);
+
+  // put in a lightsource; direction (1,1,1)	
+  const vec3 lv = vec3(0.57735, 0.57735, 0.57735);
+
+  // blend base texture and reflection
+  gl_FragColor = dot(N1, lv) * mix(CRefl, CBase, 0.3);
+}

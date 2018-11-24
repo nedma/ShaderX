@@ -1,0 +1,81 @@
+
+
+// Input structure
+struct PS_INPUT
+{
+    float4 Position : POSITION;
+	float3 Diffuse	: COLOR0;
+	float2 CoordRandom		: TEXCOORD0;
+	float2 CoordContrast	: TEXCOORD1;
+	float2 CoordPaper		: TEXCOORD3;
+	float2 IntensityLambert	: TEXCOORD4;
+};
+
+// Output structure
+struct PS_OUTPUT
+{
+    float4 Color: COLOR;
+};
+
+vector vParams						: register(c2); // Pixel shader parameters
+vector vLight						: register(c3); // World space light position
+sampler	texRandomNoise				: register(ps, s0);	// Random noise texture
+sampler	texContrastEnhancedNoise	: register(ps, s1);	// Contrast enhanced grayscale noise texture
+sampler texPaper					: register(ps, s2);	// Background paper texture
+
+
+PS_OUTPUT main(	const PS_INPUT Input
+				)
+{
+	// Init output
+    PS_OUTPUT	Out = (PS_OUTPUT) 0; 
+
+	// Retrieve random value (from random noise texture)
+	float4 colRandom = tex2D(texRandomNoise, Input.CoordRandom);
+
+	// The lookup coordinate for the enhanced grayscale noise texture is 
+	// composed by a random u coordinate and by the enhanced
+	// lightning intensity value as the v coordinate
+	float2 vecCoordLookup;
+	vecCoordLookup.x	= colRandom.x * 0.05f;;
+	vecCoordLookup.y	= Input.CoordContrast.y + colRandom.y * 0.05f;;
+
+	// Sample the contrast enhanced grayscale noise texture with
+	// the above calculated texture coordinate
+	float4 colEnhanced = tex2D(texContrastEnhancedNoise, vecCoordLookup);
+
+	// Retrieve the blend ratio from the pixel shader paramter
+	float fRatio = vParams.x;
+	// Blend the color from the texture with the enhanced diffuse color
+	float4 colSmudged = lerp ( colEnhanced, Input.Diffuse.xxxx, fRatio );
+
+	// Bumpmap with paper texture
+	float4 colBumpTerm	=  tex2D(texPaper, Input.CoordPaper)*2.0f - 1.0f;
+	float3 vecLightTerm = vLight.xyz;
+	float colPaper		= saturate(dot(vecLightTerm.xyz, colBumpTerm));
+
+	// Multiply with previously calculated pixel color
+	float4 colFinal	= colPaper * colSmudged; 
+	
+	// Just lambert shaded diffuse lightning
+	//Out.Color = float4(0.5, 0.5, 0.5, 1.0) * clamp(Input.IntensityLambert.x, 0.0, 1.0);
+
+	// Just Contrast enhanced shaded
+	//Out.Color = float4(0.5, 0.5, 0.5, 1.0) * clamp(Input.Diffuse.x, 0.0, 1.0);
+
+	// Just textured with enhanced noise texture
+	//Out.Color = colEnhanced;
+
+	// Blending of enhanced vertex color with color from enhanced noise texture
+	//Out.Color = colSmudged;
+
+	// The final result
+	Out.Color	= colFinal;
+
+	return Out;
+}
+
+
+
+
+

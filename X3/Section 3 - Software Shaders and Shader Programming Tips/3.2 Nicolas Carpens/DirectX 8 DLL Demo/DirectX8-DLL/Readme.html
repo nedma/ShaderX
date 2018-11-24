@@ -1,0 +1,146 @@
+<TITLE>Readme</TITLE>
+<DIV style="LEFT: 8px; POSITION: absolute; TOP: 8px; Design_Time_Lock: True" Design_Time_Lock="True"
+	ms_positioning="text2D">
+	<P><U><STRONG>Summary</STRONG></U></P>
+	<BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+		<P>These demos show the software rendering capabilities of <A href="http://sw-shader.sourceforge.net">
+				swShader</A> as a <A href="http://www.microsoft.com/directx/">DirectX</A> 8 
+			DLL. When the d3d8.dll is placed next to an executable that uses <A href="http://www.microsoft.com/directx/">
+				DirectX</A> 8, all calls will be intercepted. Because <A href="http://sw-shader.sourceforge.net">
+				swShader</A> renders everything on the CPU, no 3D hardware acceleration is 
+			required.</P>
+	</BLOCKQUOTE>
+	<P><STRONG><U>Newest Version</U></STRONG></P>
+	<BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+		<P>This is an alpha version. Please check <A href="http://sw-shader.sourceforge.net">http://sw-shader.sourceforge.net</A>
+			&nbsp;regularly for newer versions.</P>
+		<P>Because this is an alpha version, it is potentially unstable. Many features are 
+			not supported (see below) and features that are expected to work might still 
+			fail. Although this software has little potential of damaging your system, and 
+			certainly hasn't been designed that way, I make no warranty that it doesn't so. 
+			Use it at your own discretion. Please read the detailed <A href="#disclaimer">disclaimer</A>
+			at the bottom.</P>
+	</BLOCKQUOTE>
+	<P><STRONG><U>Demos</U></STRONG></P>
+	<BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+		<P>The demo executables are&nbsp;produced from the freely available <A href="http://www.microsoft.com/downloads/details.aspx?FamilyID=b75955d0-52af-4bdf-8aa9-7c3ebd798bf6&amp;DisplayLang=en">
+				DirectX 8 SDK</A>&nbsp;using the unmodified code. You can test hardware 
+			accelerated rendering by renaming or removing the d3d8.dll from this 
+			package&nbsp;folder.</P>
+		<P>They require Windows 98/XP and a Pentium II compatible processor. A Pentium III 
+			compatible processor is highly recommended for&nbsp;<A href="http://sw-shader.sourceforge.net">
+				swShader</A>'s vector operations. Pentium II and Athlon - 
+			Thunderbird&nbsp;processors will use an emulation mode which is much 
+			slower.&nbsp;Your graphics card should be DirectDraw 7 compatible and support 
+			32-bit color. Your desktop color depth should be 32-bit.&nbsp;No 3D hardware 
+			acceleration required! If you meet these specifications and the demos don't 
+			work, please contact me at <A href="mailto:nicolas@capens.net">nicolas@capens.net</A>.</P>
+	</BLOCKQUOTE>
+	<P dir="ltr"><U><STRONG>Features</STRONG></U></P>
+	<BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+		<P dir="ltr">You are free to use the DLL&nbsp;of this package&nbsp;<U>for 
+				non-commercial purposes</U>. Bug reports or any other feedback are very 
+			much appreciated. Below is a list of features that should already be supported, 
+			and some notes about stability.</P>
+		<P dir="ltr">General architecture: swShader's&nbsp;fixed-function pixel pipeline 
+			consists of up to eight stages, and each stage can do a texture lookup. All <A href="http://www.microsoft.com/directx/">
+				DirectX</A> arguments and nearly all blending operations are supported. 
+			However, there is no separate pipeline for the alpha channel. It supports all 
+			stencil operations, all depth compare modes and some limited alpha blending. 
+			The fixed-function vertex pipeline implements basic T&amp;L but no fog or 
+			texture coordinate transformations. Six user-defined clipping planes can be 
+			set.</P>
+		<P dir="ltr">DLL interfaces:</P>
+		<UL dir="ltr">
+			<LI>
+				<DIV>IDirect3D8 nearly fully implemented. Supports only one adapter. GetDeviceCaps 
+					can be inaccurate. GetAdapterMonitor unimplemented. GetAdapterIdentifier 
+					returns no useful information.</DIV>
+			<LI>
+				<DIV>IDirect3DBaseTexture8 fully implemented. No LOD or priority control. PreLoad 
+					has no effect.</DIV>
+			<LI>
+				<DIV>IDirect3DCubeTexture8 not supported.</DIV>
+			<LI>
+				<DIV>IDirect3DDevice8 implements most important functions.&nbsp;State blocks, swap 
+					chains, pixel shaders, programmable vertex shaders, DrawPrimitiveUP 
+					and&nbsp;gamma ramp entirely unsupported. Nearly all state changes advertised 
+					in GetDeviceCaps are supported.&nbsp;No fog.</DIV>
+			<LI>
+				<DIV>IDirect3DIndexBuffer8 fully implemented.</DIV>
+			<LI>
+				<DIV>IDirect3DSurface8 fully implemented.</DIV>
+			<LI>
+				<DIV>IDirect3DSwapChain8 not supported.</DIV>
+			<LI>
+				<DIV>IDirect3DTexture8 fully implemented. Same remarks as IDirect3DBaseTexture8.</DIV>
+			<LI>
+				<DIV>IDirect3DVertexBuffer8 fully implemented. Blend weights and point size not 
+					supported.</DIV>
+			<LI>
+				<DIV>IDirect3DVolume8 not supported.</DIV>
+			<LI>
+				<DIV>IDirect3DVolumeTexture8 not supported.</DIV>
+			</LI>
+		</UL>
+		<P>"Fully implemented" only means that all the interface's functions have an 
+			implementation. It doesn't mean this implementation is entirely tested.</P>
+		<P>There are known issues with the state management system. <A href="http://sw-shader.sourceforge.net">
+				swShader</A> caches render operations and associates a state. However, this 
+			state is not a one-to-one mapping with the DirectX states and currently it is 
+			not flawless. Therefore, it is possible that one render operation does not 
+			behave the same every time or cause an error even when the exact same DirectX 
+			state is used. This will be fixed in the near future.</P>
+	</BLOCKQUOTE>
+	<P><EM></EM></P>
+	<P><STRONG><U>Technology</U></STRONG></P>
+	<BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+		<P><A href="http://sw-shader.sourceforge.net">swShader</A> uses run-time code 
+			generation and SIMD assembly to achieve superiour software rendering 
+			performance and flexibility. By eliminating the need for state checks in the 
+			rendering pipeline, the full processor power is available. New rendering 
+			functions are generated when needed, and cached for reuse.</P>
+		<P>The run-time code generation is powered by&nbsp;<A href="http://softwire.sourceforge.net">SoftWire</A>.&nbsp;It 
+			features <A href="http://softwire.sourceforge.net/tutorial.html">run-time 
+				intrinsics</A>, which allows to conveniently&nbsp;convert any shader 
+			instruction as an x86 assembly block. It is possible to do register allocation 
+			and peephole optimizations without multiple passes. The produced code is 
+			comparable to hand-optimized code.</P>
+	</BLOCKQUOTE>
+	<P><U><STRONG>License Conditions</STRONG></U></P>
+	<BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+		<P dir="ltr" style="MARGIN-RIGHT: 0px">All <A href="http://sw-shader.sourceforge.net">swShader</A>
+			header, source and library&nbsp;files are Copyright&nbsp;© 2002-2004 Nicolas 
+			Capens unless indicated otherwise. The freely available source code from <A href="http://sourceforge.net/projects/sw-shader">
+				SourceForge.net</A>&nbsp;is licenced under the <A href="http://www.opensource.org/licenses/lgpl-license.php">
+				LGPL</A>.</P>
+		<P dir="ltr" style="MARGIN-RIGHT: 0px">Only non-commercial&nbsp;use of <A href="http://sw-shader.sourceforge.net">
+				swShader</A>&nbsp;and its libraries is allowed. To license&nbsp;<A href="http://sw-shader.sourceforge.net">swShader</A>
+			technology or hire me for integration in your project, please contact me at <A href="mailto:nicolas@capens.net">
+				nicolas@capens.net</A>.</P>
+		<P dir="ltr" style="MARGIN-RIGHT: 0px"><FONT size="2">(It is illegal to remove the 
+				startup splash screen and redistribute it. If you do manage to&nbsp;crack it, 
+				please be sportsmanlike and let me know.)</FONT></P>
+	</BLOCKQUOTE>
+	<P><STRONG><U><a name="disclaimer">DISCLAIMER</a></U></STRONG></P>
+	<BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+		<P>BECAUSE THE DEMONSTRATION IS FREE OF CHARGE, THERE IS NO WARRANTY, TO THE EXTENT 
+			PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE 
+			CREATOR(S), THE DEMONSTRATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, 
+			EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+			WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE 
+			RISK AS TO THE QUALITY AND PERFORMANCE OF THE DEMONSTRATION IS WITH YOU. SHOULD 
+			THE DEMONSTRATION PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY 
+			SERVICING, REPAIR OR CORRECTION. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW 
+			OR AGREED TO IN WRITING WILL ANY CREATOR BE LIABLE TO YOU FOR DAMAGES, 
+			INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT 
+			OF THE USE OR INABILITY TO USE THE DEMONSTRATION (INCLUDING BUT NOT LIMITED TO 
+			LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR 
+			THIRD PARTIES OR A FAILURE OF THE DEMONSTRATION TO OPERATE WITH ANY OTHER 
+			SOFTWARE).</P>
+	</BLOCKQUOTE>
+	<P>
+		<center>Copyright ©&nbsp;2002-2004 Nicolas Capens - <A href="mailto:nicolas@capens.net">
+				nicolas@capens.net</A></center>
+	<P></P>
+</DIV>

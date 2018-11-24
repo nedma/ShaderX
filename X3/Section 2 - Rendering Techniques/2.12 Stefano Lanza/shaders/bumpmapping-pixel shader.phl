@@ -1,0 +1,101 @@
+
+// Samplers:
+sampler normalMap, tangentMap, reflectionTex, refractionTex;
+
+
+// Constants:
+float3 sunColor;        // color of sun
+float3 sunDirection;    // direction of sunlight
+float  alpha;           // alpha value to blend two normals
+
+
+// Vertex structure:
+struct VS_OUTPUT {
+    float4 pos      : POSITION;   // position in world space
+    float4 uv       : TEXCOORD0;  // two sets of tex. coordinates
+    float4 projUv   : TEXCOORD1;  // projective  tex. coordinates
+    float3 view     : TEXCOORD2;  // view vector in world space
+    float2 perturb  : TEXCOORD3;  // perturbations
+};
+
+
+// Fresnel term approximation
+float fastFresnel(float3 I, float3 N, float R0, float power) {
+  return R0 + (1-R0)*pow(1.0 - dot(I, N), power);
+}
+
+
+// Main function
+// The output of the vertex shader is taken as input
+float4 main(VS_OUTPUT v) : COLOR {
+
+// Fetch the normal map using the first two sets of texture coordinates and then
+// linearly interpolate the samples with the alpha value
+    float3 normal = lerp(tex2D(normalMap, v.uv.zw), 
+                         tex2D(normalMap, v.uv.xy),
+                         alpha
+                        );
+
+// Expand the the x and z coordinates of the normal from the range [0, 1] to the range [-1, +1]:
+// NOTE: the y coordinates is always positive in the range [0, 1]
+    normal.xz = 2*(normal.xz-0.5);
+
+// Fetch tangent map
+    float3 tangent = tex2D(tangentMap, v.uv.xy);
+    tangent.xyz = 2*(tangent.xyz-0.5);          // expand tangent
+
+// Fetch a high frequency normal vector:
+    float3 bumpNormal;
+    bumpNormal = tex2D(normalMap, v.uv.xy * 8);
+
+// Expand x, z components to the range [-1, 1]:
+    bumpNormal.xz = 2*(bumpNormal.xz-0.5); 
+
+// Fade out the effects of bumpmapping
+    bumpNormal = lerp(float3(0,1,0), bumpNormal, v.perturb.x*alpha);
+
+// Build the object2tangent space matrix
+    float3 binormal = cross(normal, tangent);
+    float3x3 obj2tanSpace = { tangent, normal, binormal };
+
+
+// Transform the view vector and the sun direction from object space to tangent space
+    float3 tanV = mul(obj2tanSpace, v.viewVector);
+    float3 tanL = mul(obj2tanSpace, sunDirection); 
+
+// Calculate the texture coordinates used to fetch the reflection and refraction textures
+// First project the coordinates for projective texture mapping:
+    float2 projUv = v.projUv.xy / v.projUv.w;
+
+// Then add some perturbations, higher for tall waves; to perturb the texture coordinates 
+// we use the bump normal back-transformed from tangent to world space 
+// (we need only the x, z coordinates):
+    float2 Nxz;
+    Nxz[0] = tangent.x*bumpNormal.x + normal.x*bumpNormal.y + 
+             binormal.x*bumpNormal.z;
+    Nxz[1] = tangent.z*bumpNormal.x + normal.z*bumpNormal.y + 
+             binormal.z*bumpNormal.z;
+
+    float2 projUv = v.projUv.xy / v.projUv.w;
+    float2 reflUv = projUv + v.perturb.x*Nxz.xy;
+    float2 refrUv = projUv + v.perturb.y*Nxz.yx;
+
+// Calculate the Fresnel term
+   float  Fresnel = fastFresnel(tanV, bumpNormal, 0.0204, 5);  
+
+// Fetch the reflection and refraction textures:
+    float3 reflection = tex2D(reflectionTex, reflUv);
+    float3 refraction = tex2D(refractionTex, refrUv);
+
+// The two textures are blended according to the Fresnel term calculated above
+    float3 color = lerp(refraction, reflection, Fresnel);
+
+// Now calculate the specular highlights of sun using the Phong illumination model:
+    float3 tanR = reflect(tanV, bumpNormal);
+    float  specular = max(0, dot(tanR, tanL) );
+    float3 specularColor = Fresnel*sunColor*pow(specular, 512);
+
+// Add the specular term to the final color and return it
+    return float4(color + specularColor, 1);
+}
+

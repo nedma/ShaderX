@@ -1,0 +1,67 @@
+!!ARBvp1.0
+
+
+PARAM mvp[4]		= {	state.matrix.mvp };
+PARAM mvinv[4]		= {	state.matrix.modelview.invtrans	};
+PARAM ambientCol    = state.lightprod[0].ambient;
+PARAM L[9]			= {	program.env[0..8] };
+PARAM const			= {3,-1,0,0};
+
+ATTRIB iVertex		= vertex.position;
+ATTRIB iNormal		= vertex.normal;
+ATTRIB iTex			= vertex.texcoord;
+ATTRIB iCol			= vertex.color;
+OUTPUT oPos			= result.position;
+OUTPUT oCol			= result.color;
+OUTPUT oTex			= result.texcoord;
+
+TEMP c;
+TEMP xz, zy, yx;
+TEMP f1, f2;
+TEMP normal;
+
+# transform	the	position
+DP4	oPos.x,	mvp[0],	iVertex;
+DP4	oPos.y,	mvp[1],	iVertex;
+DP4	oPos.z,	mvp[2],	iVertex;
+DP4	oPos.w,	mvp[3],	iVertex;
+
+# Transform	the	normal to eye coordinates.
+DP3	normal.x, mvinv[0],	iNormal;
+DP3	normal.y, mvinv[1],	iNormal;
+DP3	normal.z, mvinv[2],	iNormal;
+
+MOV	normal,	iNormal;
+
+MUL	xz,	normal.x, normal.z;
+MUL	zy,	normal.z, normal.y;
+MUL	yx,	normal.y, normal.x;
+
+# 3.0f * dirn.z	* dirn.z - 1.0f
+MUL	f1,	normal.z, normal.z;
+MAD	f1,	const.x, f1, const.y;
+
+#dirn.x	* dirn.x - dirn.y *	dirn.y
+MUL	f2,	normal.x, normal.x;
+MUL	c, normal.y, normal.y;
+SUB	f2,	f2,	c;
+
+MOV	c, L[0];
+MAD	c, L[1], normal.x, c;
+MAD	c, L[2], normal.y, c;
+MAD	c, L[3], normal.z, c;
+MAD	c, L[4], xz, c;
+MAD	c, L[5], zy, c;
+MAD	c, L[6], yx, c;
+MAD	c, L[7], f1, c;
+MAD	c, L[8], f2, c;
+
+ADD c, c, ambientCol;
+
+MUL oCol, c, iCol;
+
+#pass through texture coordinates
+MOV	oTex, iTex;
+
+END
+

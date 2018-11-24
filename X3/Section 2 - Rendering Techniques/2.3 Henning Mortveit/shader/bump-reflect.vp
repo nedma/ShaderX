@@ -1,0 +1,30 @@
+!!ARBvp1.0
+
+# Computes position
+#
+# Passes on:
+#
+#   texture coords in texcoord[0]
+#   world coordinates texcoord[1]
+#
+
+PARAM mvp[4]  = { state.matrix.mvp };
+
+ATTRIB iVertex  = vertex.position;
+ATTRIB iNormal  = vertex.normal;
+ATTRIB iTexture = vertex.texcoord[0];
+
+OUTPUT oPosition  = result.position;
+OUTPUT oTexture   = result.texcoord[0];
+OUTPUT oPosition2 = result.texcoord[1];
+
+DP4 oPosition.x, mvp[0], iVertex;
+DP4 oPosition.y, mvp[1], iVertex;
+DP4 oPosition.z, mvp[2], iVertex;
+DP4 oPosition.w, mvp[3], iVertex;
+
+MOV oTexture,   iTexture;
+MOV oPosition2, iVertex;
+
+
+END 

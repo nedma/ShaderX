@@ -1,0 +1,28 @@
+// actionids:
+//
+// 0  1  2
+// 3     4
+// 5  6  7
+
+// simply scale values on a log scale 
+// display  scale*(log(1+input))
+ps.2.0
+    dcl t0.xy
+    dcl_2d s0
+	dcl_2d s1
+	
+//	def c18, 1.0f, 1.0f, 1.0f, 1.0f		
+	
+#define SCALE				c25.x		// loaded
+#define ONE					c18			//loaded
+	
+
+    texld  r0, t0, s0
+    add		r0, r0, ONE
+    
+    log		r0, r0.x
+
+	mul		r0, r0, SCALE
+    
+	mov oC0, r0
+

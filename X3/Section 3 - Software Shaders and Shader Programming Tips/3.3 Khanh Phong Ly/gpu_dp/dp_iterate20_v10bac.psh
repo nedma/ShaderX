@@ -1,0 +1,186 @@
+//------------------------------------------------------------------------------
+// path determination using dynamic programming on gpu 
+// 
+// the 8 possible actions from each cell are:
+// 
+// 1  2  3
+// 4  X  5
+// 6  7  8
+//
+//------------------------------------------------------------------------------
+
+ps.2.0
+
+
+
+#define root2 1.414213562373f
+
+    def c16, root2, 1.0f, root2, 1.0f
+    def c17, 1.0f, root2, 1.0f, root2
+    def c18, 1.0f, 1.0f, 1.0f, 1.0f
+	
+#define AOPM				c0		// AOPM = action probability map. takes up 16 4vecs.
+#define GEOMETRIC_FACTOR0	c16		// 2 4VECS
+#define GEOMETRIC_FACTOR1	c17		// 2 4VECS
+#define ONE					c18
+#define TEX_DX				c19.xyzw		// texel increment amount. add this to offset the sampler.
+#define TEX_DY				c19.wzyx		// texel increment amount. add this to offset the sampler. !care! vert increment stored in z rather than w.
+
+	// special registers...
+#define CELLVAL		r0				// cell value.
+#define CELLVAL0	r1.x
+#define CELLVAL1	r1.y
+#define CELLVAL2	r1.z
+#define CELLVAL3	r1.w
+#define CELLVAL4	r2.x
+#define CELLVAL5	r2.y
+#define CELLVAL6	r2.z
+#define CELLVAL7	r2.w
+#define CELLVALS_0	r1
+#define CELLVALS_1	r2
+
+#define ACTIONCOST0		r3.x
+#define ACTIONCOST1		r3.y
+#define ACTIONCOST2		r3.z
+#define ACTIONCOST3		r3.w
+#define ACTIONCOST4		r4.x
+#define ACTIONCOST5		r4.y
+#define ACTIONCOST6		r4.z
+#define ACTIONCOST7		r4.w
+#define ACTIONCOSTS_0	r3
+#define ACTIONCOSTS_1	r4
+
+#define RESIDUEPROB0	r5.x
+#define RESIDUEPROB1	r5.y
+#define RESIDUEPROB2	r5.z
+#define RESIDUEPROB3	r5.w
+#define RESIDUEPROB4	r6.x
+#define RESIDUEPROB5	r6.y
+#define RESIDUEPROB6	r6.z
+#define RESIDUEPROB7	r6.w
+#define RESIDUEPROBS_0	r5
+#define RESIDUEPROBS_1	r6
+
+
+// free temp registers start from r8 onwards.
+
+
+    dcl t0.xy						// cell values
+    dcl_2d s0						// cell values
+    dcl_2d s1						// neighbourhood maska
+    dcl_2d s2						// neighbourhood maskb
+    dcl_2d s3						// Action Residue probabilities_a
+    dcl_2d s4						// Action Residue probabilities_b
+    dcl_2d s5						// initial cell values.
+
+	
+    texld	CELLVAL, t0, s0									// load cell val
+    
+															// load neigbours and pack. be wary of nth order dependency on texld
+	add		r8.xy, t0, -TEX_DY
+	texld	r9, r8, s0
+	mov		CELLVAL1, r9.x
+	
+	add		r8.xy, r8, -TEX_DX 
+	texld	r8, r8, s0
+	mov		CELLVAL0, r8.x
+
+	add		r9.xy, t0, TEX_DX 
+	texld	r10, r9, s0
+	mov		CELLVAL4, r10.x
+
+	add		r9.xy, r9, -TEX_DY
+	texld	r9, r9, s0
+	mov		CELLVAL2, r9.x
+
+	add		r11.xy, t0, TEX_DY
+	texld	r10, r11, s0
+	mov		CELLVAL6, r10.x
+
+	add		r11.xy, r11, TEX_DX
+	texld	r11, r11, s0
+	mov		CELLVAL7, r11.x
+
+	add		r7.xy, t0, -TEX_DX 
+	texld	r8, r7, s0
+	mov		CELLVAL3, r8.x
+
+	add		r7.xy, r7, TEX_DY 
+	texld	r7, r7, s0
+	mov		CELLVAL5, r7.x
+	
+		// at this point r8-11 inclusive can no longer be used in texld/kill instructions.
+
+
+	
+
+	mul		CELLVALS_0, CELLVALS_0, GEOMETRIC_FACTOR0			// bake with geometric factors
+	mul		CELLVALS_1, CELLVALS_1, GEOMETRIC_FACTOR1
+
+	texld	r3, t0, s1											// load neighbour mask for cell
+	texld	r4, t0, s2
+	
+	mul		CELLVALS_0, CELLVALS_0, r3						// precalculate cost * mask
+	mul		CELLVALS_1, CELLVALS_1, r4
+	
+	texld	RESIDUEPROBS_0, t0, s3								// load residue probabilities for each action.
+	texld	RESIDUEPROBS_1, t0, s4
+
+							// NOW CALCULATE COSTS FOR EACH ACTION
+				
+	dp4		r8, c0, CELLVALS_0					// action 0
+	dp4		r9, c1, CELLVALS_1
+	add		r10, r8, r9
+	mad		ACTIONCOST0, RESIDUEPROB0, CELLVAL.x, r10
+
+	dp4		r8, c2, CELLVALS_0					// action 1
+	dp4		r9, c3, CELLVALS_1
+	add		r10, r8, r9
+	mad		ACTIONCOST1, RESIDUEPROB1, CELLVAL.x, r10
+
+	dp4		r8, c4, CELLVALS_0					// action 2
+	dp4		r9, c5, CELLVALS_1
+	add		r10, r8, r9
+	mad		ACTIONCOST2, RESIDUEPROB2, CELLVAL.x, r10
+
+	dp4		r8, c6, CELLVALS_0					// action 3
+	dp4		r9, c7, CELLVALS_1
+	add		r10, r8, r9
+	mad		ACTIONCOST3, RESIDUEPROB3, CELLVAL.x, r10
+
+	dp4		r8, c8, CELLVALS_0					// action 4
+	dp4		r9, c9, CELLVALS_1
+	add		r10, r8, r9
+	mad		ACTIONCOST4, RESIDUEPROB4, CELLVAL.x, r10
+
+	dp4		r8, c10, CELLVALS_0					// action 5
+	dp4		r9, c11, CELLVALS_1
+	add		r10, r8, r9
+	mad		ACTIONCOST5, RESIDUEPROB5, CELLVAL.x, r10
+
+	dp4		r8, c12, CELLVALS_0					// action 6
+	dp4		r9, c13, CELLVALS_1
+	add		r10, r8, r9
+	mad		ACTIONCOST6, RESIDUEPROB6, CELLVAL.x, r10
+
+	dp4		r8, c14, CELLVALS_0					// action 7
+	dp4		r9, c15, CELLVALS_1
+	add		r10, r8, r9
+	mad		ACTIONCOST7, RESIDUEPROB7, CELLVAL.x, r10
+
+
+																// find minumum of the 8 components.
+	min		r8, ACTIONCOSTS_0, ACTIONCOSTS_1
+
+	mov		r9, r8.wzyx							// copy last 2 components to be compared with first 2
+
+	min		r10, r8, r9
+	mov		r11, r10.y
+	min		r8, r10, r11
+	
+	texld	r1, t0, s5							// original cost vals.	
+	add		r9.x, r8.x, r1
+	
+//	mov		r9.y, CELLVAL.y					// debug only. comment out for release build.
+	
+	mov oC0, r9

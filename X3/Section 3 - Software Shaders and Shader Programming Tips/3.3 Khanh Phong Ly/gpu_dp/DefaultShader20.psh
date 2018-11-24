@@ -1,0 +1,22 @@
+//------------------------------------------------------------------------------
+// DefaultShader20.psh
+//
+// Default version 2.0 pixel shader
+//
+// $Header: //depot/3darg/Demos/Internal/D3DXEffectDemos_DX9/VideoDemo/Installer/Image/Shaders/DefaultShader20.psh#4 $
+//
+// Marwan Y. Ansari - ATI Research, Inc. - 2002
+//------------------------------------------------------------------------------
+
+ps.2.0
+    dcl t0.xy
+    dcl t1.xy
+    dcl_2d s0
+	dcl_2d s1
+
+    texld  r0, t0, s0
+	texld  r1, t1, s1
+
+	mov oC0, r0
+//	mul r2, r1, r0
+//	mov oC0, r2

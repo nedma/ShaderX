@@ -1,0 +1,17 @@
+Parallax mapping demo
+by Terry Welsh
+Infiscape Corporation
+terry 'at' infiscape.com
+
+
+compiling dependencies:
+glut
+
+
+usage:
+left mouse button rotates
+middle mouse button pans
+right mouse button zooms
+press "l" to start and stop light movements.
+press "t" to change the texture.
+

@@ -1,0 +1,242 @@
+-----------------------------------------
+[WinMain:]
+Logfile: w322.log
+Time:    Thu May 20 19:44:19 2004
+
+-----------------------------------------
+[Command line arguments: ]
+	"D:\Documents
+	and
+	Settings\Wolf\Desktop\ShaderX3
+	Articles\Nick
+	Thieberoz\Henning
+	Mortveit
+	-
+	Reflections
+	from
+	Bumpy
+	Surfaces\demo\w322.exe"
+-----------------------------------------
+System Information: 
+	Mouse:   Yes
+	Buttons: 5
+	Wheel:   Yes
+	Swapped: No
+	Slow:    No
+	Network: Yes
+	Architecture: 32bit
+	System: Windows
+[Initializing display manager]
+[Initializing input manager]
+[Initializing window manager]
+W32WindowManager::WindowExtensionInitialize
+W32WindowManager: Loading extensions
+GL_VERSION_1_2 supported: Yes
+GL_VERSION_1_3 supported: Yes
+GL_VERSION_1_4 supported: Yes
+GL_VERSION_1_5 supported: Yes
+OpenGL_1_2: Omitting ARB_imaging subset
+GL_ARB_depth_texture supported: Yes
+GL_ARB_fragment_program supported: Yes
+GL_ARB_fragment_shader supported: Yes
+GL_ARB_matrix_palette supported: No
+GL_ARB_multisample supported: Yes
+GL_ARB_occlusion_query supported: Yes
+GL_ARB_point_parameters supported: Yes
+GL_ARB_point_sprite supported: Yes
+GL_ARB_shader_objects supported: Yes
+GL_ARB_shading_language_100 supported: Yes
+GL_ARB_shadow supported: Yes
+GL_ARB_shadow_ambient supported: Yes
+GL_ARB_texture_border_clamp supported: Yes
+GL_ARB_texture_compression supported: Yes
+GL_ARB_texture_cube_map supported: Yes
+GL_ARB_texture_env_add supported: Yes
+GL_ARB_texture_env_combine supported: Yes
+GL_ARB_texture_env_crossbar supported: Yes
+GL_ARB_texture_env_dot3 supported: Yes
+GL_ARB_texture_mirrored_repeat supported: Yes
+GL_ARB_texture_non_power_of_two supported: No
+GL_ARB_transpose_matrix supported: Yes
+GL_ARB_vertex_buffer_object supported: Yes
+GL_ARB_vertex_program supported: Yes
+GL_ARB_vertex_shader supported: Yes
+GL_ARB_window_pos supported: Yes
+GL_ATI_pn_triangles supported: No
+GL_ATI_separate_stencil supported: Yes
+GL_ATI_texture_float supported: Yes
+GL_ATI_texture_mirror_once supported: Yes
+GL_EXT_compiled_vertex_array supported: Yes
+GL_EXT_stencil_two_side supported: No
+WGL_ARB_extensions_string supported: 1
+WGL_ARB_make_current_read supported: 1
+WGL_ARB_pbuffer supported: 1
+WGL_ARB_pixel_format supported: 1
+WGL_ARB_render_texture supported: 1
+WGL_ATI_pixel_format_float supported: 1
+WGL_EXT_depth_float supported: 0
+WGL_EXT_display_color_table supported: 0
+WGL_EXT_extensions_string supported: 1
+  W32WindowManager::CloseWindow
+(*WProc) WM_DESTROY - keep
+  W32WindowManager::CloseWindow: Complete
+W32WindowManager::WindowExtensionInitialize: Complete
+[Setting display resolution]
+Current display dims: 1280 1024
+[Creating OpenGL window]
+W32WindowManager::InitWindow: Settings:
+	Fullscreen:      0
+	MultiSample:     1
+	TRUForm:         0
+	RenderToTexture: 1
+	Registered
+	Window created
+	Window DC obtained
+	Window pixel format: 13 1
+	Pixel format set.
+	wgl context created
+	wgl context current
+Done
+(*WProc) WM_ACTIVATE: activated - not minimized
+(*WProc) WM_SIZE: 1152 921
+[Creating pbuffer]
+Created pbuffer 1024 1024
+----------------------------------------------
+W32DisplayManager::Info
+	Device name: Whatever for now! [EnumDisplayDevices not present CygWin]
+----------------------------------------------
+W32InputManager::Info
+	Initialized
+---------------------------------------------
+W32WindowManager::Info
+	GL  Version : 1.5.4332 WinXP Release
+	GLU version : 1.2.2.0 Microsoft Corporation
+	GL  Vendor  : ATI Technologies Inc.
+	GL  Renderer: RADEON 9800 x86/SSE2
+	Resolution: 1280x1024
+	Refresh freq: 60
+	Depth: 32bpp
+OpenGL Extensions: 
+  GL_ARB_multitexture GL_EXT_texture_env_add GL_EXT_compiled_vertex_array
+  GL_S3_s3tc GL_ARB_depth_texture GL_ARB_fragment_program
+  GL_ARB_fragment_program_shadow GL_ARB_fragment_shader
+  GL_ARB_multisample GL_ARB_occlusion_query GL_ARB_point_parameters
+  GL_ARB_shader_objects GL_ARB_shading_language_100
+  GL_ARB_shadow GL_ARB_shadow_ambient GL_ARB_texture_border_clamp
+  GL_ARB_texture_compression GL_ARB_texture_cube_map
+  GL_ARB_texture_env_add GL_ARB_texture_env_combine
+  GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3
+  GL_ARB_texture_mirrored_repeat GL_ARB_transpose_matrix
+  GL_ARB_vertex_blend GL_ARB_vertex_buffer_object GL_ARB_vertex_program
+  GL_ARB_vertex_shader GL_ARB_window_pos GL_ATI_draw_buffers
+  GL_ATI_element_array GL_ATI_envmap_bumpmap GL_ATI_fragment_shader
+  GL_ATI_map_object_buffer GL_ATI_separate_stencil GL_ATI_texture_env_combine3
+  GL_ATI_texture_float GL_ATI_texture_mirror_once GL_ATI_vertex_array_object
+  GL_ATI_vertex_attrib_array_object GL_ATI_vertex_streams
+  GL_ATIX_texture_env_combine3 GL_ATIX_texture_env_route
+  GL_ATIX_vertex_shader_output_point_size GL_EXT_abgr
+  GL_EXT_bgra GL_EXT_blend_color GL_EXT_blend_func_separate
+  GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_clip_volume_hint
+  GL_EXT_draw_range_elements GL_EXT_fog_coord GL_EXT_multi_draw_arrays
+  GL_EXT_packed_pixels GL_EXT_point_parameters GL_EXT_rescale_normal
+  GL_EXT_secondary_color GL_EXT_separate_specular_color
+  GL_EXT_shadow_funcs GL_EXT_stencil_wrap GL_EXT_texgen_reflection
+  GL_EXT_texture3D GL_EXT_texture_compression_s3tc GL_EXT_texture_cube_map
+  GL_EXT_texture_edge_clamp GL_EXT_texture_env_combine
+  GL_EXT_texture_env_dot3 GL_EXT_texture_filter_anisotropic
+  GL_EXT_texture_lod_bias GL_EXT_texture_mirror_clamp
+  GL_EXT_texture_object GL_EXT_texture_rectangle GL_EXT_vertex_array
+  GL_EXT_vertex_shader GL_HP_occlusion_test GL_NV_texgen_reflection
+  GL_NV_blend_square GL_NV_occlusion_query GL_NV_point_sprite
+  GL_ARB_point_sprite GL_SGI_color_matrix GL_SGIS_texture_edge_clamp
+  GL_SGIS_texture_border_clamp GL_SGIS_texture_lod GL_SGIS_generate_mipmap
+  GL_SGIS_multitexture GL_SUN_multi_draw_arrays GL_WIN_swap_hint
+  WGL_EXT_extensions_string WGL_EXT_swap_control 
+WGL Extensions: 
+  WGL_ARB_extensions_string WGL_ARB_make_current_read
+  WGL_ARB_multisample WGL_ARB_pbuffer WGL_ARB_pixel_format
+  WGL_ARB_render_texture WGL_ATI_pixel_format_float
+  WGL_EXT_extensions_string WGL_EXT_swap_control 
+[HMF_File]: Importing file <boundary.m>
+surfaces: 6
+Scanned surface: 1
+Scanned surface: 2
+Scanned surface: 3
+Scanned surface: 4
+Scanned surface: 5
+Scanned surface: 6
+Surface[0]:
+  name: Box01
+  vert: 25
+  ntvert: 25
+  nfaces: 32
+Surface[1]:
+  name: Object01
+  vert: 153
+  ntvert: 153
+  nfaces: 288
+Surface[2]:
+  name: Object02
+  vert: 25
+  ntvert: 25
+  nfaces: 32
+Surface[3]:
+  name: Object03
+  vert: 25
+  ntvert: 25
+  nfaces: 32
+Surface[4]:
+  name: Object04
+  vert: 25
+  ntvert: 25
+  nfaces: 32
+Surface[5]:
+  name: Object05
+  vert: 25
+  ntvert: 25
+  nfaces: 32
+Vertex Shader: <shader/bump-reflect.vp>
+Error/Warning: <>
+Under native limits: Yes
+Fragment Shader: <shader/bump-reflect-real.fp>
+Error/Warning: <>
+Under native limits: Yes
+Fragment Shader: <shader/bump-reflect-simple.fp>
+Error/Warning: <>
+Under native limits: Yes
+CompileStatus: <1><>
+CompileStatus: <1><>
+Link log: <1>< Link successful. The GLSL vertex shader will run in hardware. The GLSL fragment shader will run in hardware.>
+# uniforms: 11
+	E 1 vec3
+	Er 1 vec3
+	M 1 mat3
+	N 1 vec3
+	Te 1 mat4
+	gl_ModelViewProjectionMatrix 1 mat4
+	h 1 float
+	ratio 1 float
+	baseTexture 1 WhatTheHell!
+	normalMap 1 WhatTheHell!
+	reflectionTexture 1 WhatTheHell!
+[Registering application callback functions]
+[Entering message loop]
+-----------------------------------------------
+(*IM) WM_PAINT
+(*IM) WM_ACTIVATE: activated not minimized
+Minimized : False
+(*IM) resize: 1152 921
+W32WindowManager::ReshapeFunction: 1152x921
+W32WindowManager::ReshapeFunction: hRes: 1280 51.2 vRes: 1024 64
+76.2668
+99.2447
+99.1919
+99.1034
+52.8669
+(*WProc) WM_CLOSE
+(*WProc) WM_ACTIVATE: deactivated - not minimized
+(*WProc) WM_DESTROY - keep
+(*IM) WM_QUIT
+[Restoring initial resolution]
+[Shutdown complete. Exiting]
+[Shutdown complete. Exiting WinMain]

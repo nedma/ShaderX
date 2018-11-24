@@ -1,0 +1,246 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "Lights"
+    BEGIN
+        MENUITEM "Add Light\tIns",              ID_LIGHT_ADDLIGHT
+        MENUITEM "Remove Light\tDel",           ID_LIGHT_REMOVELIGHT
+        MENUITEM "Increase Phong Lights\tPgnUp", 
+                                                ID_LIGHTS_INCREASEPHONGLIGHTS
+
+        MENUITEM "Decrease Phong Lights\tPgnDn", 
+                                                ID_LIGHTS_DECREASEPHONGLIGHTS
+
+        MENUITEM "Light Settings...",           ID_LIGHT_PHONGLIGHTS
+        MENUITEM "Draw EnvMap",                 40053
+    END
+    POPUP "Algorithm"
+    BEGIN
+        MENUITEM "Analytical Lights",           ID_ALGORITHM_ANALYTICALLIGHTS
+
+        MENUITEM "Surface Lights",              ID_ALGORITHM_SURFACELIGHTS
+        , GRAYED
+        POPUP "Spherical Environment Map"
+        BEGIN
+            MENUITEM "HDR...",                      ID_ENVIRONMENTMAP_HDR
+            , GRAYED
+            MENUITEM "RGB...",                      ID_ENVIRONMENTMAP_RGB
+        END
+        MENUITEM "Cube Environment Map...",     ID_ALGORITHM_CUBEENVIRONMENTMAP
+
+        MENUITEM SEPARATOR
+        MENUITEM "SH Per Vertex\t1",            ID_ALGORITHM_SHPERVERTEX
+        MENUITEM "SH Per Pixel\t2",             ID_ALGORITHM_SHPERPIXEL
+        MENUITEM "Phong Per Vertex\t3",         ID_ALGORITHM_PHONGPERVERTEX
+        MENUITEM "Phong Per Pixel\t4",          ID_ALGORITHM_PHONGPERPIXEL
+        MENUITEM SEPARATOR
+        MENUITEM "Enable SH Lighting Reduction\tH", 
+                                                ID_ALGORITHM_ENABLESHLIGHTINGREDUCTION
+
+    END
+    POPUP "Geometry"
+    BEGIN
+        MENUITEM "Increase Geometry Complexity\t+", 
+                                                ID_GEOMETRY_INCREASEGEOMETRYCOMPLEXITY
+
+        MENUITEM "Decrease Geometry Complexity\t-", 
+                                                ID_GEOMETRY_DECREASEGEOMETRYCOMPLEXITY
+
+        MENUITEM SEPARATOR
+        MENUITEM "Switch White\\Coloured Balls\tC", ID_GEOMETRY_SWITCHWHITE
+        MENUITEM "Switch Rotate Mode\tSpace",   ID_GEOMETRY_SWITCHROTATEMODE
+        MENUITEM "Switch Wireframe\\Full Mode\tF", 40046
+        MENUITEM "Switch texture On\\Off\tT",   ID_GEOMETRY_SWITCHTEXTUREON
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "About...",                    ID_HELP_ABOUT
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOGEX 0, 0, 186, 203
+STYLE DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Lights Settings"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,36,182,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,99,182,50,14
+    EDITTEXT        IDC_EDIT1,117,23,40,14,ES_AUTOHSCROLL
+    LTEXT           "Number of Phong Lights",IDC_STATIC,29,25,77,8
+    LTEXT           "This only matters when SH lighting is enabled",
+                    IDC_STATIC,23,43,144,8
+    COMBOBOX        IDC_COMBO1,113,84,48,66,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Enabled",IDC_LIGHTENABLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,33,84,42,10
+    LTEXT           "Red",IDC_STATIC,23,106,14,8
+    EDITTEXT        IDC_LIGHTRED,49,103,40,14,ES_AUTOHSCROLL
+    LTEXT           "Green",IDC_STATIC,23,121,20,8
+    EDITTEXT        IDC_LIGHTGREEN,49,118,40,14,ES_AUTOHSCROLL
+    LTEXT           "Blue",IDC_STATIC,23,137,15,8
+    EDITTEXT        IDC_LIGHTBLUE,49,132,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "Light Settings",IDC_STATIC,15,71,155,101
+    GROUPBOX        "Lighting Settings",IDC_STATIC,15,7,155,55
+    LTEXT           "X",IDC_STATIC,107,105,8,8
+    EDITTEXT        IDC_LIGHTX,121,103,40,14,ES_AUTOHSCROLL
+    LTEXT           "Y",IDC_STATIC,107,121,8,8
+    EDITTEXT        IDC_LIGHTY,121,118,40,14,ES_AUTOHSCROLL
+    LTEXT           "Z",IDC_STATIC,107,135,8,8
+    EDITTEXT        IDC_LIGHTZ,121,132,40,14,ES_AUTOHSCROLL
+    CONTROL         "Animated",IDC_LIGHTANIMATED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,71,154,42,10
+END
+
+IDD_DIALOG2 DIALOGEX 0, 0, 186, 113
+STYLE DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "About..."
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,67,92,50,14
+    LTEXT           "Static",IDC_STATIC1,21,16,144,8
+    LTEXT           "Static",IDC_STATIC2,21,35,144,8
+    LTEXT           "Static",IDC_STATIC3,21,54,144,8
+    LTEXT           "Static",IDC_STATIC4,21,73,144,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 196
+    END
+
+    IDD_DIALOG2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 106
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "H",            ID_ALGORITHM_ENABLESHLIGHTINGREDUCTION, VIRTKEY, 
+                                                    NOINVERT
+    "4",            ID_ALGORITHM_PHONGPERPIXEL, VIRTKEY, NOINVERT
+    "3",            ID_ALGORITHM_PHONGPERVERTEX, VIRTKEY, NOINVERT
+    "2",            ID_ALGORITHM_SHPERPIXEL, VIRTKEY, NOINVERT
+    "1",            ID_ALGORITHM_SHPERVERTEX, VIRTKEY, NOINVERT
+    VK_SUBTRACT,    ID_GEOMETRY_DECREASEGEOMETRYCOMPLEXITY, VIRTKEY, 
+                                                    NOINVERT
+    VK_ADD,         ID_GEOMETRY_INCREASEGEOMETRYCOMPLEXITY, VIRTKEY, 
+                                                    NOINVERT
+    "P",            ID_GEOMETRY_SWITCHPLANEPOOLTABLE, VIRTKEY, NOINVERT
+    VK_SPACE,       ID_GEOMETRY_SWITCHROTATEMODE, VIRTKEY, NOINVERT
+    "T",            ID_GEOMETRY_SWITCHTEXTUREON, VIRTKEY, NOINVERT
+    "C",            ID_GEOMETRY_SWITCHWHITE, VIRTKEY, NOINVERT
+    "F",            ID_GEOMETRY_SWITCHWIREFRAME, VIRTKEY, NOINVERT
+    VK_INSERT,      ID_LIGHT_ADDLIGHT,      VIRTKEY, NOINVERT
+    VK_DELETE,      ID_LIGHT_REMOVELIGHT,   VIRTKEY, NOINVERT
+    VK_NEXT,        ID_LIGHTS_DECREASEPHONGLIGHTS, VIRTKEY, NOINVERT
+    VK_PRIOR,       ID_LIGHTS_INCREASEPHONGLIGHTS, VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON2               ICON    DISCARDABLE     "icon2.ico"
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

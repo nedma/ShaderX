@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gpu_dp", "gpu_dp\gpu_dp.vcproj", "{12352FFB-74E7-4B99-91BC-E4840E3EB7F4}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		debug pixel shader = debug pixel shader
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{12352FFB-74E7-4B99-91BC-E4840E3EB7F4}.Debug.ActiveCfg = Debug|Win32
+		{12352FFB-74E7-4B99-91BC-E4840E3EB7F4}.Debug.Build.0 = Debug|Win32
+		{12352FFB-74E7-4B99-91BC-E4840E3EB7F4}.debug pixel shader.ActiveCfg = debug pixel shader|Win32
+		{12352FFB-74E7-4B99-91BC-E4840E3EB7F4}.debug pixel shader.Build.0 = debug pixel shader|Win32
+		{12352FFB-74E7-4B99-91BC-E4840E3EB7F4}.Release.ActiveCfg = Release|Win32
+		{12352FFB-74E7-4B99-91BC-E4840E3EB7F4}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

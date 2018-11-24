@@ -1,0 +1,72 @@
+!!ARBvp1.0
+
+PARAM mvp[4]		= {	state.matrix.mvp };
+PARAM mvinv[4]		= {	state.matrix.modelview.invtrans	};
+PARAM light0Dir		= state.light[0].position;
+PARAM diffuse0Col	= state.lightprod[0].diffuse;
+PARAM ambientCol    = state.light[0].ambient;
+
+PARAM camera		= program.env[9];
+
+PARAM power	= {32,32,32,32};
+PARAM SpecularContribution = {0.3,0.3,0.3,0.3};
+PARAM DiffuseContribution  = {0.7,0.7,0.7,0.7};
+
+ATTRIB iVertex		= vertex.position;
+ATTRIB iNormal		= vertex.normal;
+ATTRIB iTex			= vertex.texcoord;
+ATTRIB iCol			= vertex.color;
+OUTPUT oPos			= result.position;
+OUTPUT oCol			= result.color;
+OUTPUT oTex			= result.texcoord;
+
+TEMP lightDirNorm, lightVec;
+TEMP viewDirNorm, viewVec;
+TEMP temp, temp1, temp2, dots;
+TEMP half;
+
+# transform	the	position
+DP4	oPos.x,	mvp[0],	iVertex;
+DP4	oPos.y,	mvp[1],	iVertex;
+DP4	oPos.z,	mvp[2],	iVertex;
+DP4	oPos.w,	mvp[3],	iVertex;
+
+#compute and normalise view direction
+SUB viewVec, camera, iVertex;
+DP3 temp, viewVec, viewVec;
+RSQ temp, temp.x;
+MUL viewDirNorm, viewVec, temp;
+
+#Light number 1
+#compute normalise light direction
+SUB lightVec, light0Dir, iVertex;
+DP3 temp, lightVec, lightVec;
+RSQ temp, temp.x;
+MUL lightDirNorm, lightVec, temp;
+
+#compute and normalise half vector = light + view
+ADD half, viewDirNorm, lightDirNorm;
+DP3 temp, half, half;
+RSQ temp, temp.x;
+MUL half, half, temp;
+
+# Compute diffuse and specular dot products and use LIT to compute
+# lighting coefficients.
+DP3   dots.x, iNormal, lightDirNorm;
+DP3   dots.y, iNormal, half;
+MOV   dots.w, power.x;
+LIT   dots, dots;
+
+# Accumulate color contributions.
+MUL temp1, dots.z, SpecularContribution;
+MUL temp2, dots.y, DiffuseContribution;
+ADD temp, temp1, temp2;
+MAD temp, temp, diffuse0Col, ambientCol;
+
+MUL oCol, temp, iCol;
+
+#pass through texture coordinates
+MOV	oTex, iTex;
+
+END
+

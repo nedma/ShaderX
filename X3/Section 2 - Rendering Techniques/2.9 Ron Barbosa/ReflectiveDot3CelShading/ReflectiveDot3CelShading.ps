@@ -1,0 +1,59 @@
+// Pixel Shader input structure
+struct PS_INPUT
+{
+	float	Scale:		TEXCOORD0;		// Color scaling factor
+	float3	vCSNorm:	TEXCOORD1;		// Camera space vertex normal
+};
+
+// Constant registers
+float	shades:					register(c0);	// Total number of color bands desired
+float	excluded_shades:		register(c1);	// Number of bands excluded to draw the edge
+float4	render_color:			register(c2);	// Base render color (material diffuse)
+float4	edge_color:				register(c3);	// Hard edge or silhouette color
+float	intensity_adjustment:	register(c4);	// Final brightness adjustment
+
+// Environment map sampler
+sampler	environment_sampler:	register(s0);
+
+// Pixel shader entry point. This shader accepts, as input,
+// the color scaling factor and the camera space vertex normal
+// in the form of a PS_INPUT structure.
+float4 ps_main(PS_INPUT inData) : COLOR0
+{
+	// Output color:
+	float4 color;
+
+	// Reduce the total number of colors by performing
+	// an integer multiplication (and truncation) and then
+	// performing the division to get back a value in the
+	// 0..1 range.
+	int scalefactor = floor(inData.Scale * shades);
+	inData.Scale = scalefactor / shades;
+
+	// Determine if the scale creates a color that is excluded.
+	if(inData.Scale < excluded_shades / shades)
+	{
+		// This color is excluded and is part of the hard edge.
+		// Set it to the desired color with full alpha opacity.
+		color = edge_color;
+	}
+	else
+	{
+		// This is not an excluded color, scale it and add a
+		// bias of 1 shade to avoid overdarkening the image.
+		color = (render_color * inData.Scale) + (render_color / shades);
+	}
+
+	// Sample environment map.  Calculate the UV coordinates with the
+	// standard spheremap equations U = Nx / 2 + 0.5 &
+	//								V = Nz / 2 + 0.5,
+	// where N is the camera space vertex normal.
+	float2 UV = float2(inData.vCSNorm[0] / 2.0f + 0.5f,
+					   inData.vCSNorm[1] / 2.0f + 0.5f);
+	float4 environment_color = tex2D(environment_sampler, UV);
+	
+	// Return the scaled color with blended reflection or hard edge.  The
+	// intensity adjustment constant allows for a final adjustment of the
+	// color after blending.
+	return(color + environment_color + intensity_adjustment);
+}

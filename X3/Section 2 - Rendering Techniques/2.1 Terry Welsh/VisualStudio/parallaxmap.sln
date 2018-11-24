@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "parallaxmap", "parallaxmap.vcproj", "{789D877E-856E-4B4B-9CDF-CA8E2A8C6D22}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{789D877E-856E-4B4B-9CDF-CA8E2A8C6D22}.Debug.ActiveCfg = Debug|Win32
+		{789D877E-856E-4B4B-9CDF-CA8E2A8C6D22}.Debug.Build.0 = Debug|Win32
+		{789D877E-856E-4B4B-9CDF-CA8E2A8C6D22}.Release.ActiveCfg = Release|Win32
+		{789D877E-856E-4B4B-9CDF-CA8E2A8C6D22}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

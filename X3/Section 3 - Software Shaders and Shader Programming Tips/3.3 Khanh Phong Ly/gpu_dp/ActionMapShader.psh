@@ -1,0 +1,141 @@
+// actionids:
+//
+// 0  1  2
+// 3     4
+// 5  6  7
+ps.2.0
+
+/*
+#define root2 1.414213562373f
+#define FLT_EPSILON     1.192093e-7f
+#define FLT_MAX         3.4028e38f
+//#define FLT_EPSILON     2.0e-7f
+//#define FLT_EPSILON     5.0e-5f
+//#define FLT_MAX         3.4028e30f
+
+    def c16, root2, 1.0f, root2, 1.0f
+    def c17, 1.0f, root2, 1.0f, root2
+    def c20, FLT_MAX, FLT_MAX, FLT_MAX, FLT_MAX
+    def c21, FLT_EPSILON, FLT_EPSILON, FLT_EPSILON, FLT_EPSILON
+    def c22, 0,0,0,0
+    def c23, 0,1,2,3		// actionid = id * 20 ; simply for display purposes
+    def c24, 4,5,6,7
+*/    
+    
+#define AOPM				c0		// AOPM = action probability map. takes up 16 4vecs.
+#define GEOMETRIC_FACTOR0	c16		// 2 4VECS
+#define GEOMETRIC_FACTOR1	c17		// 2 4VECS
+#define ONE					c18
+#define TEX_DX				c19.xyzw		// texel increment amount. add this to offset the sampler.
+#define TEX_DY				c19.wzyx		// texel increment amount. add this to offset the sampler. !care! vert increment stored in z rather than w.
+#define MAXVAL				c20
+#define MINABSVAL			c21
+#define ZERO				c22
+#define ACTION_IDS_0		c23
+#define ACTION_IDS_1		c24
+
+	// special registers...
+#define CELLVAL		r0				// cell value.
+#define CELLVAL0	r1.x
+#define CELLVAL1	r1.y
+#define CELLVAL2	r1.z
+#define CELLVAL3	r1.w
+#define CELLVAL4	r2.x
+#define CELLVAL5	r2.y
+#define CELLVAL6	r2.z
+#define CELLVAL7	r2.w
+#define CELLVALS_0	r1
+#define CELLVALS_1	r2
+
+#define NEIGHBRMASKS_0	r7
+#define NEIGHBRMASKS_1	r8
+
+// free temp registers start from r8 onwards.
+
+
+    dcl t0.xy						
+    dcl_2d s0						// current cell values
+    dcl_2d s1						// neighbourhood maska
+    dcl_2d s2						// neighbourhood maskb
+
+	
+    texld	CELLVAL, t0, s0									// load cell val
+    add		r2, CELLVAL.x, -MINABSVAL
+	texkill r2											// if cell value is eq or lt zero, kill rendering of pixel.
+    
+															// load neigbours and pack. be wary of nth order dependency on texld
+	add		r3.xy, t0, -TEX_DY
+	texld	r9, r3, s0
+	mov		CELLVAL1, r9.x
+	
+	add		r3.xy, r3, -TEX_DX 
+	texld	r3, r3, s0
+	mov		CELLVAL0, r3.x
+
+	add		r9.xy, t0, TEX_DX 
+	texld	r10, r9, s0
+	mov		CELLVAL4, r10.x
+
+	add		r9.xy, r9, -TEX_DY
+	texld	r9, r9, s0
+	mov		CELLVAL2, r9.x
+
+	add		r11.xy, t0, TEX_DY
+	texld	r10, r11, s0
+	mov		CELLVAL6, r10.x
+
+	add		r11.xy, r11, TEX_DX
+	texld	r11, r11, s0
+	mov		CELLVAL7, r11.x
+
+	add		r7.xy, t0, -TEX_DX 
+	texld	r3, r7, s0
+	mov		CELLVAL3, r3.x
+
+	add		r7.xy, r7, TEX_DY 
+	texld	r7, r7, s0
+	mov		CELLVAL5, r7.x
+	
+		// at this point r3,9,10,11 inclusive can no longer be used in texld/kill instructions.
+
+	texld	r7, t0, s1											// load neighbour mask for cell
+	texld	r8, t0, s2
+	
+	mul		CELLVALS_0, CELLVALS_0, r7						// precalculate cost * mask
+	mul		CELLVALS_1, CELLVALS_1, r8
+
+//	mul		CELLVALS_0, CELLVALS_0, GEOMETRIC_FACTOR0			// bake with geometric factors
+//	mul		CELLVALS_1, CELLVALS_1, GEOMETRIC_FACTOR1
+
+
+	// for intended actions that are invalid (ie cant intend to go south against a wall)
+	// set the cost to be the max cost
+	cmp		CELLVALS_0, -NEIGHBRMASKS_0, MAXVAL, CELLVALS_0
+	cmp		CELLVALS_1, -NEIGHBRMASKS_1, MAXVAL, CELLVALS_1
+
+														// find minumum of the 8 components.
+														// and find ids of the actions with least cost.
+	mov 	r5, ACTION_IDS_1													
+	min		r11, CELLVALS_0, CELLVALS_1
+	sub		r3, r11, CELLVALS_0
+	cmp		r4, r3, ACTION_IDS_0, r5
+	
+	mov		r9, r11.wzyx							// copy last 2 components to be compared with first 2
+	mov		r5, r4.wzyx
+
+	min		r10, r11, r9
+	sub		r3, r10, r11
+	cmp		r4, r3, r4, r5
+	
+	mov		r11, r10.y
+	mov		r5, r4.y
+
+	min		r9, r10, r11
+	sub		r3, r9, r10
+	cmp		r4, r3, r4, r5
+
+//	cmp		r5, r4, CELLVAL
+//	mov		r4.y, ZERO
+	
+	mov oC0, r4
+	

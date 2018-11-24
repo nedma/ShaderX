@@ -1,0 +1,65 @@
+// Pixel Shader input structure
+struct PS_INPUT
+{
+	float	Scale:	TEXCOORD0;			// Edge width scale factor
+	float	NdotL:	TEXCOORD1;			// N.L for lighting calculation
+	float3	vNorm:	TEXCOORD2;			// World space interpolated normal
+	float3	vEye:	TEXCOORD3;			// Eye vector for specular highlight
+	float3	vLight:	TEXCOORD4;			// Light direction vector
+};
+
+// Constant registers
+float	shades:			register(c0);	// Number of color bands in render
+float	edge_width:		register(c1);	// Edge width factor
+float4	render_color:	register(c2);	// Material diffuse color
+float4	edge_color:		register(c3);	// Silhouette color
+float	ambient_level:	register(c4);	// Grey ambient light level
+float	shininess:		register(c5);	// Specular power
+
+// Pixel shader entry point. This shader accepts, as input,
+// the output from the vertex shader in the form of a
+// PS_INPUT structure.
+float4 ps_main( PS_INPUT inData ) : COLOR0
+{
+	// Output color
+	float4 color;
+
+	// Reduce the total number of colors by performing
+	// an integer multiplication (and truncation) of the N.L
+	// value, performing the inverse division to get back a
+	// value in the 0..1 range.
+	int scalefactor = floor(inData.NdotL * shades);
+	inData.NdotL = scalefactor / shades;
+
+	// Determine if the eye vector scale is below the threshold
+	// for rendering the edge pixels.
+	if(inData.Scale < edge_width)
+	{
+		// This pixel is below the threshold and is part of the
+		// hard edge.  Set it to the desired edge color.
+		color = edge_color;
+	}
+	else
+	{
+		// This is not an edge pixel, scale it and add a bias
+		// of 1 shade to avoid overdarkening the image if it
+		// is facing the light source.  If it is opposing the
+		// light source, color it with ambient lighting.
+		color = saturate((render_color * inData.NdotL) + (render_color / shades)) +
+						 (render_color * ambient_level);
+	}
+	
+	// Calculate per-pixel specular.  Begin by normalizing all
+	// vectors that are the result of interpolation and may not
+	// be of unit length.
+	inData.vNorm  = normalize(inData.vNorm);
+	inData.vEye   = normalize(inData.vEye);
+	inData.vLight = normalize(inData.vLight);
+	float3 r = 2 * dot(inData.vNorm, inData.vLight) * inData.vNorm - inData.vLight;
+	
+	// Calculate specular at full white
+	float specular = pow(saturate(dot(r, inData.vEye)), shininess);
+	
+	// Return the scaled color or hard edge with specular component.
+	return color + specular;
+}

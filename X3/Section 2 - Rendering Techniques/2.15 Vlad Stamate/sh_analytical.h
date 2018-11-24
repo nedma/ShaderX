@@ -1,0 +1,2 @@
+void CalculateCoefficientsAnalytical();
+void SHAnalyticalInitConstants();

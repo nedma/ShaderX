@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "D3D9-dll", "D3D9-dll.vcproj", "{F18D5ABF-CA3A-4B74-BDB2-4A1956C86F18}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "D3D9-lib", "D3D9-lib.vcproj", "{BC3E7377-698E-4E31-A689-1FB7BC3B4365}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{F18D5ABF-CA3A-4B74-BDB2-4A1956C86F18}.Debug.ActiveCfg = Debug|Win32
+		{F18D5ABF-CA3A-4B74-BDB2-4A1956C86F18}.Debug.Build.0 = Debug|Win32
+		{F18D5ABF-CA3A-4B74-BDB2-4A1956C86F18}.Release.ActiveCfg = Release|Win32
+		{F18D5ABF-CA3A-4B74-BDB2-4A1956C86F18}.Release.Build.0 = Release|Win32
+		{BC3E7377-698E-4E31-A689-1FB7BC3B4365}.Debug.ActiveCfg = Debug|Win32
+		{BC3E7377-698E-4E31-A689-1FB7BC3B4365}.Debug.Build.0 = Debug|Win32
+		{BC3E7377-698E-4E31-A689-1FB7BC3B4365}.Release.ActiveCfg = Release|Win32
+		{BC3E7377-698E-4E31-A689-1FB7BC3B4365}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

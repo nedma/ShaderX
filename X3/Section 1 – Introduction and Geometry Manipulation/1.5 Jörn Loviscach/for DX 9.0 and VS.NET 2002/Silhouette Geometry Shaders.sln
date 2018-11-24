@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silhouette Geometry Shaders", "Silhouette Geometry Shaders.csproj", "{D8F3B77D-2442-4A66-8B79-995398044762}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{D8F3B77D-2442-4A66-8B79-995398044762}.Debug.ActiveCfg = Debug|.NET
+		{D8F3B77D-2442-4A66-8B79-995398044762}.Debug.Build.0 = Debug|.NET
+		{D8F3B77D-2442-4A66-8B79-995398044762}.Release.ActiveCfg = Release|.NET
+		{D8F3B77D-2442-4A66-8B79-995398044762}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

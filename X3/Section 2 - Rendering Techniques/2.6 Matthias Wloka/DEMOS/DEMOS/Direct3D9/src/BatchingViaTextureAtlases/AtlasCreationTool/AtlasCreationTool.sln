@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AtlasCreationTool", "AtlasCreationTool.vcproj", "{4B7B1106-C4DC-42C4-BDF0-D4FB6E0710DB}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug Multithreaded DLL = Debug Multithreaded DLL
+		Release Multithreaded DLL = Release Multithreaded DLL
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{4B7B1106-C4DC-42C4-BDF0-D4FB6E0710DB}.Debug Multithreaded DLL.ActiveCfg = Debug Multithreaded DLL|Win32
+		{4B7B1106-C4DC-42C4-BDF0-D4FB6E0710DB}.Debug Multithreaded DLL.Build.0 = Debug Multithreaded DLL|Win32
+		{4B7B1106-C4DC-42C4-BDF0-D4FB6E0710DB}.Release Multithreaded DLL.ActiveCfg = Release Multithreaded DLL|Win32
+		{4B7B1106-C4DC-42C4-BDF0-D4FB6E0710DB}.Release Multithreaded DLL.Build.0 = Release Multithreaded DLL|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

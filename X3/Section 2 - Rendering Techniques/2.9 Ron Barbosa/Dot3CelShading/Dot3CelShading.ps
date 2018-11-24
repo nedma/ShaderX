@@ -1,0 +1,44 @@
+// Pixel Shader input structure
+struct PS_INPUT
+{
+	float	Scale:		TEXCOORD;		// Color scaling factor
+};
+
+// Constant registers
+float	shades:				register(c0);		// Total number of color bands desired
+float	excluded_shades:	register(c1);		// Number of bands excluded to draw the edge
+float4	render_color:		register(c2);		// Base render color (material diffuse)
+float4	edge_color:			register(c3);		// Hard edge or silhouette color
+
+// Pixel shader entry point. This shader accepts, as input,
+// the color scaling factor stored as a texture coordinate
+// in a PS_INPUT structure.
+float4 ps_main(PS_INPUT inData) : COLOR0
+{
+	// Output color
+	float4 color;
+
+	// Reduce the total number of colors by performing
+	// an integer multiplication (and truncation) and then
+	// performing the division to get back a value in the
+	// 0..1 range.
+	int scalefactor = floor(inData.Scale * shades);
+	inData.Scale = scalefactor / shades;
+
+	// Determine if the scale creates a color that is excluded.
+	if(inData.Scale < excluded_shades / shades)
+	{
+		// This color is excluded and is part of the hard edge.
+		// Set it to the desired color with full alpha opacity.
+		color = edge_color;
+	}
+	else
+	{
+		// This is not an excluded color, scale it and add a
+		// bias of 1 shade to avoid overdarkening the image.
+		color = (render_color * inData.Scale) + (render_color / shades);
+	}
+
+	// Return the scaled color or hard edge.
+	return color;
+}

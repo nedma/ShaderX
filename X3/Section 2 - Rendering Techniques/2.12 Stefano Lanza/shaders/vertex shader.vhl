@@ -1,0 +1,62 @@
+
+
+// Constants:
+float4x4 viewProjMatrix;       // world to clip space matrix
+float4x4 projTexMatrix;        // projective texturing matrix 
+float3   nodeOrigin;           // world space origin of node   
+float4   mapping, mapping2;    // see chapter on normal mapping
+float3   viewer;               // viewer in world space
+
+
+// Input vertex structure
+struct VS_INPUT {
+    float4 pos      : POSITION;   // position in object space
+};
+
+
+// Output vertex structure
+struct VS_OUTPUT {
+    float4 pos      : POSITION;   // position in world space
+    float4 uv       : TEXCOORD0;  // two sets of tex. coordinates
+    float4 projUv   : TEXCOORD1;  // projective  tex. coordinates
+    float3 view     : TEXCOORD2;  // view vector in world space
+    float2 perturb  : TEXCOORD3;  // perturbations
+};
+
+
+
+// Main function
+VS_OUTPUT main(const VS_INPUT In) {
+    VS_OUTPUT Out;
+
+// Transform the vertex position taken in input from object space to world space:
+    float4 worldPos = float4(In.pos+nodeOrigin, 1);
+
+// Then transform world position to clip space:
+    Out.pos = mul (viewProjMatrix, worldPos);
+
+// Generate two sets of texture coordinates used by the pixel shader to fetch the normal 
+// of the valid and coarser mapping:
+    Out.uv.x = (worldPos.x - mapping.x)  * mapping.w;
+    Out.uv.y = (mapping.z  - worldPos.z) * mapping.w;
+    Out.uv.z = (worldPos.x - mapping2.x) * mapping2.w;
+    Out.uv.w = (mapping2.z - worldPos.z) * mapping2.w;
+
+// Calculate a set of 4D texture coordinates for projective texture mapping:
+    Out.projUv = mul(projTexMatrix, worldPos);
+
+// Calculate the normalized view vector in world space:
+    float3 viewVector = viewer – worldPos;
+    float  viewDist = length(viewVector);
+    Out.viewVector = viewVector / viewDist;   // normalize
+
+// We use the distance from the vertex to the viewer to exponentially decrease how much the waves
+// distort the reflections and refractions:
+    float p = exp(-A*viewDist);
+    Out.perturb = float2(B*p, C*p);
+
+// p.s: set A,B,C to small positive values to get the best visual results
+
+    return Out;
+}
+

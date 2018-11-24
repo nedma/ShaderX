@@ -1,0 +1,61 @@
+[Initializing display manager]
+[Initializing input manager]
+[Initializing window manager]
+W32WindowManager::WindowExtensionInitialize
+W32WindowManager: Loading extensions
+GL_VERSION_1_2 supported: Yes
+GL_VERSION_1_3 supported: Yes
+GL_VERSION_1_4 supported: Yes
+GL_VERSION_1_5 supported: Yes
+OpenGL_1_2: Omitting ARB_imaging subset
+GL_ARB_depth_texture supported: Yes
+GL_ARB_fragment_program supported: Yes
+GL_ARB_fragment_shader supported: Yes
+GL_ARB_matrix_palette supported: No
+GL_ARB_multisample supported: Yes
+GL_ARB_occlusion_query supported: Yes
+GL_ARB_point_parameters supported: Yes
+GL_ARB_point_sprite supported: Yes
+GL_ARB_shader_objects supported: Yes
+GL_ARB_shading_language_100 supported: Yes
+GL_ARB_shadow supported: Yes
+GL_ARB_shadow_ambient supported: Yes
+GL_ARB_texture_border_clamp supported: Yes
+GL_ARB_texture_compression supported: Yes
+GL_ARB_texture_cube_map supported: Yes
+GL_ARB_texture_env_add supported: Yes
+GL_ARB_texture_env_combine supported: Yes
+GL_ARB_texture_env_crossbar supported: Yes
+GL_ARB_texture_env_dot3 supported: Yes
+GL_ARB_texture_mirrored_repeat supported: Yes
+GL_ARB_texture_non_power_of_two supported: No
+GL_ARB_transpose_matrix supported: Yes
+GL_ARB_vertex_buffer_object supported: Yes
+GL_ARB_vertex_program supported: Yes
+GL_ARB_vertex_shader supported: Yes
+GL_ARB_window_pos supported: Yes
+GL_ATI_pn_triangles supported: No
+GL_ATI_separate_stencil supported: Yes
+GL_ATI_texture_float supported: Yes
+GL_ATI_texture_mirror_once supported: Yes
+GL_EXT_compiled_vertex_array supported: Yes
+GL_EXT_stencil_two_side supported: No
+WGL_ARB_extensions_string supported: 1
+WGL_ARB_make_current_read supported: 1
+WGL_ARB_pbuffer supported: 1
+WGL_ARB_pixel_format supported: 1
+WGL_ARB_render_texture supported: 1
+WGL_ATI_pixel_format_float supported: 1
+WGL_EXT_depth_float supported: 0
+WGL_EXT_display_color_table supported: 0
+WGL_EXT_extensions_string supported: 1
+  W32WindowManager::CloseWindow
+(*WProc) WM_DESTROY - keep
+  W32WindowManager::CloseWindow: Complete
+W32WindowManager::WindowExtensionInitialize: Complete
+37:1280:1024:32:60
+fullScreen: 0
+append: 
+ati32bit: 1
+infinity: 0
+command line: w322.exe -exr 

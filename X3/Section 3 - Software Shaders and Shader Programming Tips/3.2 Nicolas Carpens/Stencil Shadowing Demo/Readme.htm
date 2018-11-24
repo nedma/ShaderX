@@ -1,0 +1,48 @@
+<P>This demo performs stencil shadowing in software.</P>
+<P>Use the mouse and cursor keys to manoeuvre around. Press 'B' to see the shadow 
+	volume. Several settings can be changed in the swShader.ini file as well.
+</P>
+<P>Enjoy!</P>
+<P>Nicolas Capens</P>
+<P><U>SYSTEM REQUIREMENTS</U></P>
+<UL>
+	<LI>
+	Pentium II compatible processor. Pentium III or better highly recommended.
+	<LI>
+	Windows XP/2000 compatible operating system.
+	<LI>
+	DirectDraw compatible graphics card capable of 640x480 resolution at 32-bit 
+	color depth.
+	<LI>
+		Set desktop color depth to 32-bit.</LI></UL>
+<P>No 3D accelerator card required! Should you meet these requirements, but the 
+	application fails, please contact me.</P>
+<P><U>TECHNOLOGY</U></P>
+<P>The software rendering core is the swShader library (sw-shader.sf.net). It uses 
+	run-time assembly compilation and optimization to obtain superiour software 
+	rendering performance and flexibility. It features support for even the newest 
+	DirectX shaders. Every frame a shadow volume is constructed from the model's 
+	silhouette. It is rendered to the stencil buffer using the depth-pass 
+	technique. The part not in shadow is diffusely lit while the shadowed part uses 
+	ambient lighting in a second pass. Because of the knot's geometry , the 
+	overdraw in the stencil buffer can be up to eight, which partially explains the 
+	low performance of this demo. A hack in the diffuse lighting is used to 
+	minimize shadow popping. There are no special optimizations to speed up 
+	stenciling, like the ones mentioned in the ShaderX<sup>3</sup> book.</P>
+<P><U>CONTACT</U></P>
+<P>Please e-mail me at <A href="mailto:nicolas@capens.net">nicolas@capens.net</A>.</P>
+<P><U>DISCLAIMER</U></P>
+<P>NO WARRANTY BECAUSE THE DEMONSTRATION IS FREE OF CHARGE, THERE IS NO WARRANTY, 
+	TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN 
+	WRITING THE CREATOR(S), THE DEMONSTRATION IS PROVIDED "AS IS" WITHOUT WARRANTY 
+	OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE 
+	IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE 
+	ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE DEMONSTRATION IS WITH YOU. 
+	SHOULD THE DEMONSTRATION PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY 
+	SERVICING, REPAIR OR CORRECTION. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW 
+	OR AGREED TO IN WRITING WILL ANY CREATOR BE LIABLE TO YOU FOR DAMAGES, 
+	INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT 
+	OF THE USE OR INABILITY TO USE THE DEMONSTRATION (INCLUDING BUT NOT LIMITED TO 
+	LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR 
+	THIRD PARTIES OR A FAILURE OF THE DEMONSTRATION TO OPERATE WITH ANY OTHER 
+	SOFTWARE).</P>

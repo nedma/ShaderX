@@ -1,0 +1,4 @@
+Here has been installer for RenderMonkey v1.5.426.
+It's removed to save space.
+Get latest release from: http://www.ati.com/developer/rendermonkey/downloads.html .
+It's free!
