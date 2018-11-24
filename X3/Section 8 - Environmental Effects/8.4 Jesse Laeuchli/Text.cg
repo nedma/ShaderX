@@ -1,0 +1,19 @@
+struct Vert
+{
+    float4 pos  : POSITION;
+    float4 dif  : COLOR0;
+    float4 tex  : TEXCOORD0;
+};
+
+struct Pix
+{
+    float4 dif : COLOR0;
+};
+
+Pix main(const Vert In, const uniform sampler BaseTexture)
+{
+  Pix Out;
+  Out.dif = In.dif* tex2D(BaseTexture, In.tex.xy);
+  return Out;
+}
+

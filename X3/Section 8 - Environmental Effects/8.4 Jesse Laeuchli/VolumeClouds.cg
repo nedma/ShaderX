@@ -1,0 +1,47 @@
+struct Vert
+{
+    float4 pos  : POSITION;
+    float4 dif  : COLOR0;
+    float4 tex  : TEXCOORD0;
+};
+
+struct Pix
+{
+    float4 dif : COLOR0;
+};
+FLOAT Blend;
+FLOAT NoiseScale1;
+FLOAT NoiseScale2;
+FLOAT ImplictBlend;
+float3 lightpos;
+Pix main(const Vert In, const uniform sampler BaseTexture )
+{
+	Pix Out;
+	
+	lightpos.x=1;
+	lightpos.y=1;
+	lightpos.z=-1;
+	float4 point=In.tex;
+	float4 point2=In.tex; 
+	float4 perturb=tex3D(BaseTexture, In.tex.xyz)+(.5*tex3D(BaseTexture, 2*In.tex.xyz))+(.25*tex3D(BaseTexture, 4*In.tex.xyz))+(.125*tex3D(BaseTexture, 8*In.tex.xyz));
+	float4 turbperturb=2*(tex3D(BaseTexture, In.tex.xyz)-.5);
+	float3 normal=perturb.xyz/sqrt(dot(perturb.xyz,perturb.xyz));
+	point.xyz+=(perturb.www/NoiseScale1);
+	point2.xyz+=(perturb.www/NoiseScale2);
+	float d=sqrt((point.z-.5)*(point.z-.5)+(point.y-.5)*(point.y-.5)+(point.x-.5)*(point.x-.5));
+	float d2=sqrt((point2.z-.25)*(point2.z-.25)+(point2.y-.25)*(point2.y-.25)+(point2.x-.25)*(point2.x-.25));
+	d=lerp(1-d*2,turbperturb.w,Blend);
+	d2=lerp(1-d2*2,turbperturb.w,Blend);
+	float cloud=lerp(d,d2,ImplictBlend);
+	Out.dif.xyz=1-dot(2*(normal.xyz-.5),lightpos.xyz);
+
+	if(cloud<.01)
+	{
+		Out.dif.w=cloud;
+	}
+	else
+	{
+		Out.dif.w=pow(cloud,1.45);
+	}
+	return Out;
+}

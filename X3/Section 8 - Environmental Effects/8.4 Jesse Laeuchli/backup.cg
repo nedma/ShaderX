@@ -1,0 +1,43 @@
+struct Vert
+{
+    float4 pos  : POSITION;
+    float4 dif  : COLOR0;
+    float4 tex  : TEXCOORD0;
+};
+
+struct Pix
+{
+    float4 dif : COLOR0;
+};
+FLOAT Blend;
+FLOAT NoiseScale1;
+FLOAT NoiseScale2;
+
+Pix main(const Vert In, const uniform sampler BaseTexture )
+{
+  Pix Out;
+  
+  float4 point=In.tex;
+  float4 point2=In.tex;
+  float4 perturb=tex3D(BaseTexture, In.tex.xyz)+(.5*tex3D(BaseTexture, 2*In.tex.xyz))+(.25*tex3D(BaseTexture, 4*In.tex.xyz))+(.125*tex3D(BaseTexture, 8*In.tex.xyz));
+  float4 turbperturb=2*(tex3D(BaseTexture, In.tex.xyz)-.5);
+  point.xyz+=(perturb.xyz/1.75);
+  point2.xyz+=(perturb.xyz/5);
+  float d=sqrt((point.z-.5)*(point.z-.5)+(point.y-.5)*(point.y-.5)+(point.x-.5)*(point.x-.5));
+  float d2=sqrt((point2.z-.25)*(point2.z-.25)+(point2.y-.25)*(point2.y-.25)+(point2.x-.25)*(point2.x-.25));
+  d=lerp(1-d*2,turbperturb.x,Blend);
+  d2=lerp(1-d2*2,turbperturb.x,Blend);
+  float cloud=lerp(d,d2,.3);
+  Out.dif.x=cloud*5;
+  Out.dif.y=cloud*5;
+  Out.dif.z=cloud*5;
+  if(cloud<.01)
+  {
+  Out.dif.w=cloud;
+  }
+  else
+  {
+	  Out.dif.w=pow(cloud,1.45);
+  }
+  return Out;
+}
