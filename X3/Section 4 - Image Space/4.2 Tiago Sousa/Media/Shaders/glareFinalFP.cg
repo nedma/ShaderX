@@ -1,0 +1,39 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  Proj : ShaderX 3
+//  File : simpleFP.cg
+//  Desc : simple fragment program, for debugging
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+// define outputs from vertex shader
+struct VpOut
+{
+    float4 HPosition    : POSITION;    
+    float4 TexCoord0    : TEXCOORD0;
+    float4 TexCoord1    : TEXCOORD1;    
+};
+
+fragout main(VpOut IN, uniform sampler2D tex0, uniform sampler2D tex1)
+{
+    fragout OUT;
+    float4 vScreenMap=tex2D(tex0, IN.TexCoord0.xy);
+    float4 vGlareMap=tex2D(tex1, IN.TexCoord1.xy);
+    
+    // technique 1: just add results
+    //float3 vFinal=vScreenMap+vGlareMap;
+    
+    // technique 2: add results acoording to screen texture pixel brightness
+    //float fLum=dot(vScreenMap.xyz, float3(0.3, 0.59, 0.11));
+    //float4 vMaxAmount=vScreenMap+vGlareMap;
+    //float3 vFinal=lerp(vMaxAmount, vScreenMap, fLum);
+        
+    // technique 3: inverse multiplying. CG Generates bad code for low-end cards this way
+    //float3 vFinal=saturate(vScreenMap.xyz+vGlareMap.xyz-vScreenMap.xyz*vGlareMap.xyz);    
+    
+    // technique 3: inverse multiplying
+    float3 vFinal=(vScreenMap.xyz+vGlareMap.xyz*(1-vScreenMap.xyz));
+
+    OUT.col.xyz= vFinal;
+    OUT.col.w=1;
+    
+    return OUT;
+}

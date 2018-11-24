@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="Direct3D Color Grading"
+	ProjectGUID="{64EE7CE5-3040-4CD7-864E-2769E180A043}"
+	Keyword="Win32Proj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="builds\debug\d3dcolgrad9"
+			IntermediateDirectory="builds\debug\d3dcolgrad9"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="shaders"
+				PreprocessorDefinitions="WIN32;_DEBUG;_LIB;_DEBUG_OUTPUT"
+				MinimalRebuild="TRUE"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="5"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="TRUE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/d3dcolgrad9d.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="copy &quot;$(OutDir)\$(TargetName).lib&quot; .\"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="builds\release\d3dcolgrad9"
+			IntermediateDirectory="builds\release\d3dcolgrad9"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				OmitFramePointers="TRUE"
+				AdditionalIncludeDirectories="shaders"
+				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
+				StringPooling="TRUE"
+				RuntimeLibrary="4"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="TRUE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/d3dcolgrad9.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="copy &quot;$(OutDir)\$(TargetName).lib&quot; .\"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm">
+			<File
+				RelativePath="D3D Color Grader.cpp">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc">
+			<File
+				RelativePath="D3D Color Grader.h">
+			</File>
+			<File
+				RelativePath="d3dcolgrad9.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Shader Files"
+			Filter="">
+			<File
+				RelativePath=".\shaders\screen for ps_1_1.vsh">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compile Screen vertex shader for pixel shader 1.1..."
+						CommandLine="vsa &quot;$(InputDir)$(InputFileName)&quot; /Fh&quot;$(InputDir)$(InputFileName).h&quot; /nologo /Zi
+"
+						Outputs="$(InputDir)$(InputFileName).h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compile Screen vertex shader for pixel shader 1.1..."
+						CommandLine="vsa &quot;$(InputDir)$(InputFileName)&quot; /Fh&quot;$(InputDir)$(InputFileName).h&quot; /nologo
+"
+						Outputs="$(InputDir)$(InputFileName).h"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\shaders\screen for ps_1_4.vsh">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compile Screen vertex shader for pixel shader 1.4..."
+						CommandLine="vsa &quot;$(InputDir)$(InputFileName)&quot; /Fh&quot;$(InputDir)$(InputFileName).h&quot; /nologo /Zi
+"
+						Outputs="$(InputDir)$(InputFileName).h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compile Screen vertex shader for pixel shader 1.4..."
+						CommandLine="vsa &quot;$(InputDir)$(InputFileName)&quot; /Fh&quot;$(InputDir)$(InputFileName).h&quot; /nologo
+"
+						Outputs="$(InputDir)$(InputFileName).h"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="shaders\volume texture color grading.1.1.psh">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compile Volume Texture Color Grading 1.1 pixel shader..."
+						CommandLine="psa &quot;$(InputDir)$(InputFileName)&quot; /Fh&quot;$(InputDir)$(InputFileName).h&quot; /nologo /Zi
+"
+						Outputs="$(InputDir)$(InputFileName).h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compile Volume Texture Color Grading 1.1 pixel shader..."
+						CommandLine="psa &quot;$(InputDir)$(InputFileName)&quot; /Fh&quot;$(InputDir)$(InputFileName).h&quot; /nologo
+"
+						Outputs="$(InputDir)$(InputFileName).h"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\shaders\volume texture color grading.1.4.psh">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compile Volume Texture Color Grading 1.4 pixel shader..."
+						CommandLine="psa &quot;$(InputDir)$(InputFileName)&quot; /Fh&quot;$(InputDir)$(InputFileName).h&quot; /nologo /Zi
+"
+						Outputs="$(InputDir)$(InputFileName).h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compile Volume Texture Color Grading 1.4 pixel shader..."
+						CommandLine="psa &quot;$(InputDir)$(InputFileName)&quot; /Fh&quot;$(InputDir)$(InputFileName).h&quot; /nologo
+"
+						Outputs="$(InputDir)$(InputFileName).h"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<File
+			RelativePath="ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

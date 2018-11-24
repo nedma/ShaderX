@@ -1,0 +1,414 @@
+#$ DESCRIPTION FILE FORMAT: SRBF_RMD_01.00
+#$ DATA NAME: lightmap
+#
+# Description of input reference images and the corresponding 
+# Spherical Radial Basis Function (SRBF) approximation.
+#
+# Introduction:
+#
+# The input reference images are for relighting, i.e. the viewpoint is
+# assumed fixed. The program will compress the input reference images into a
+# compact data file. Spherical radial basis function approximation is
+# employed for the encoding.
+#
+# The program can be used in game development in the following manner. 
+# Multiple lightmaps related to the same surface can be first prepared using
+# any modeler and renderer. These lightmaps correspond to different lighting
+# conditions on the surface when it is illuminated by a moving light source. 
+# In theory, this light source must be directional. In practice, it can be
+# relaxed to other light sources, e.g. spotlight, area light source, or even
+# volume light source. There can be also some constant ambient light to
+# avoid the scene being too dark. The only criterion is that each lightmap
+# must be associated with a lighting direction. Specify the directions using
+# this description file. Run "rbfapprox" and then "rbfencode" to encode them
+# into a compressed data file. Use the provided library to load the
+# compressed file during the runtime and synthesize the lightmap by
+# specifying the desired lighting conditions.
+#
+# Official Homepage:
+#   http://www.cse.cuhk.edu.hk/~ttwong/software/relightmap/relightmap.html    
+#
+# References:
+#
+# * Tien-Tsin Wong, Chi-Sing Leung and Kwok-Hung Choy, 
+#   "Lighting Precomputation Using the Relighting Map", Shader X^3, 
+#   Charles Rivers Media, 2005.
+#   (http://www.cse.cuhk.edu.hk/~ttwong/papers/rbfshade/rbfshade.html)
+#
+# * Tien-Tsin Wong, Pheng-Ann Heng, Siu-Hang Or and Wai-Yin Ng, 
+#   "Image-based Rendering with Controllable Illumination", in Proceedings 
+#   of the 8-th Eurographics Workshop on Rendering (Rendering Techniques'97),
+#   St. Etienne, France, June 1997, pp. 13-22.
+#   (http://www.cse.cuhk.edu.hk/~ttwong/papers/lightfld/lightfld.html)   
+#
+# Remark: 
+#
+# You may try to feed lightfield data (viewpoint changing images) to see how
+# well the system performs. It actually works as well.
+#
+# Syntax Specification:
+#
+# All the description files must be with extension ".rmd" (stands for 
+# Relighting Map Description). The syntax may change from time to time.
+# To identify the syntax version and have quick identification of data
+# set, all description files must start with two lines:
+#
+#   #$ DESCRIPTION FILE FORMAT: SRBF_RMD_01.00
+#   #$ DATA NAME: attic
+# 
+# "#$" indicates these two comment lines have special meaning.
+# The version number is identified by "SRBF_RMD_01.00", which means
+# version 1.00.
+# The data set being described by this description file is "attic".
+#
+#
+# A quick glance of useful fields
+# -------------------------------
+#
+# During data encoding, the following fields will be used:
+# - BASE_PATH            data path
+# - REFER_FORMAT         reference image format
+# - REFER_RESOLUTION     reference image resolution
+# - REFER_FILE_BEGIN     list of reference images + light vectors
+# - ENCODED_FILE         output filename
+# - ENCODED_COLOR_MODEL  color model for encoding
+# - SRBF_CENTER_BEGIN    list of SRBF centers
+# - SRBF_SPREAD          spread value 
+#
+# During relighting, the following fields will be used:
+# - BASE_PATH            data path
+# - REFER_RESOLUTION     reference image resolution
+# - ENCODED_FILE         file holding the relighting maps 
+# - ENCODED_COLOR_MODEL  color model for encoding
+# - SRBF_CENTER_BEGIN    list of SRBF centers
+# - SRBF_SPREAD          spread value 
+# - PROJECTION_TYPE      panorama or perspective projection
+# - LIGHT_EYE_TRANSFORM_BEGIN  transform from light sample to eye spaces, persp. only
+# - FOV                  field of view, persp. only
+# - CYLINDER             panorama specific parameter
+
+
+
+############################## BASE_PATH ###################################
+#  
+# The path where input reference images and encoded file reside.
+# - Optional field
+# - Default value: local path
+#
+# Syntax:
+#    BASE_PATH <path>
+#
+# Examples: 
+#    BASE_PATH ../../data/house
+#    BASE_PATH c:/data/attic
+#
+# - Support both absolute and relative paths
+#
+# - Follow UNIX path convention, i.e.  
+#     c:/rbf/data/house
+#   instead of 
+#     c:\rbf\data\house
+#
+# - The last "/" is optional, i.e. 
+#     data/house
+#   or 
+#     data/house/
+#
+BASE_PATH  ./
+
+
+
+
+
+
+############################## REFER_FORMAT ###############################
+#
+# Specify the file format of the reference images.
+#
+# - Optional field
+# - Default value: Windows BMP (no compression)
+#
+# Syntax:
+#    REFER_FORMAT <format>
+# <format> = BMP | PPM | RGB
+# -  BMP  Windows bitmap, type: no compression
+#    PPM  Portable bitmap, color, binary, 
+#    RGB  SGI RLE image format
+#    If more formats are supported by the system, more types will be added.
+#
+REFER_FORMAT  PPM
+
+
+
+
+
+
+
+########################### REFER_RESOLUTION ############################
+#
+# Specify the image resolution of all reference images. All images must
+# have the same resolution.
+#
+# - Required field
+# - No default value.
+#
+# Syntax:
+#    REFER_RESOLUTION <width> <height>
+#
+# Example:
+#    REFER_RESOLUTION  512  512
+#
+REFER_RESOLUTION  512  512 
+
+
+
+
+
+
+
+
+############################## ENCODED_FILE ###############################
+#
+# Filename of the SRBF approximated and encoded data. The relighting maps
+# produced from SRBF approximation will be stored in the file with extension
+# "*.rbf". It stores the multi-channel SRBF coefficients (RGB/YUV). The file
+# is still large in size.  It can be further compressed using "rbfencode" to
+# generate a highly compressed file with extension "*.rbf.dwt". The path
+# where the file is resided will still be BASE_PATH.
+# 
+# - Required field
+# - No default value
+#
+# Syntax:
+#    ENCODED_FILE  <filename>
+#
+# Example:
+#    ENCODED_FILE  house
+#
+# The SRBF approxmation coefficient data file will be "house.rbf" while the
+# further compressed data file will be "house.rbf.dwt". During runtime, the
+# library/program will try to load the "*.rbf". If not exist, it will try to
+# load "*.rbf.dwt".
+#
+ENCODED_FILE lightmap
+
+
+
+
+
+
+########################## ENCODED_COLOR_MODEL ############################
+#
+# Specify the color model used during encoding. That is, it also specifies
+# the color model in the encoded "*.rbf" or "*.rbf.dwt" file.
+# 
+# - Optional field
+# - Default value: RGB 
+#
+# Syntax:
+#    ENCODED_COLOR_MODEL <colormodel>
+# <colormodel> = RGB | YUV
+#
+# Example:
+#    ENCODED_COLOR_MODEL YUV
+#
+ENCODED_COLOR_MODEL RGB
+
+
+
+
+
+
+################################ SRBF_CENTER #############################
+#
+# The SRBF centers used for SRBF approximation are listed in this section.
+# The centers are specified by theta and phi angles in degree. The
+# definition and measurement of theta and phi are the same as REFER_FILE
+# section. These SRBF centers can be distributed according to certain
+# sampling pattern.
+#
+# Notations:
+#        ^ theta axis (y)    Angle theta is measured from the theta axis (y).
+#        |                   Angle phi is measured ON the xz plane from
+#        |                   phi axis (x) in an ANTI-CLOCKWISE direction.
+#        +------> phi  (x)   All angles are measured in DEGREE.
+#       /         axis
+# (z) /
+#
+# For informative purpose, it is a good practice to put down a description
+# of the sampling pattern used for SRBF center generation.
+#
+# - Required field
+# - No default value
+#
+# Syntax:
+#    SRBF_CENTER_BEGIN <total> [<sample_pattern>] [<optional_comment>]
+#    <text_theta1> <text_phi1>  [<hex_theta1> <hex_phi1>]
+#    <text_theta2> <text_phi2>  [<hex_theta2> <hex_phi2>]
+#    ...
+#    SRBF_CENTER_END
+#
+# Example:  25 SRBF centers distributed by Hammersley points on upper hemisphere.
+#    SRBF_CENTER_BEGIN  25  HEMI_HAMMERSLEY  Upper hemisphere only 
+#     123.321212  271.423223     0A012A23  02A1FE2D
+#     232.321984    0            FE12AB67  00000000
+#     170.541232  331.218348     0B112334  128631AB     
+#      ...
+#    SRBF_CENTER_END
+#
+# <total>          
+# - specifies the total number of SRBF centers, i.e. the number of SRBF
+#   bases used for encoding.
+#
+# [<sample_pattern>] = HAMMERSLEY | HEMI_HAMMERSLEY 
+#
+# - An information tag (with no effect) to tell the user the sampling 
+#   pattern used. There are some predefined sampling pattern tags:
+#   HAMMERSLEY            Quasi Monte Carlo Hammersley point set. Full sphere.    
+#   HEMI_HAMMERSLEY       Hammersley points on upper hemisphere.
+#   OTHERS                Just add your own tag 
+# 
+# [<optional_comment>]
+# - Add any useful information here, e.g. the rationale for using SRBF center
+#   distribution.
+#
+# <text_theta> <text_phi>
+# - (theta, phi) in degree printed as text. If the program finds <hex_theta> 
+#   and <hex_phi> exists, it will ignore this textual theta and phi.
+#
+# [<hex_theta> <hex_phi>]
+# - (theta, phi) in degree. To be precise, the angles are output as
+#   hexadecimal. Hence, the 32-bit floating point can be accurately stored
+#   in this text-based description file. The 32-bit float "re-type" or
+#   "memcpy" (not cast) as long before printf. The hexadecimal output should
+#   only contain numeric and CAPITAL letters. That is, AC12D40A is valid,
+#   but not ac12d40a. These two fields are optional. If exists, the program
+#   trusts these two field instead of <text_theta> & <text_phi>. Use printf
+#   ("%X") to print the float values. Note that on little-endian processor,
+#   printf("%X", v) where v is 123456AB output "AB563412". While on
+#   big-endian process, printf ("%X", v) where v is 123456AB output
+#   "123456AB".
+#
+SRBF_CENTER_BEGIN  15  HEMI_HAMMERSLEY  
+      56.251011        20.358498
+      38.942429        54.735851
+      65.957924        78.113205
+      50.977200       100.490562
+      31.586329       116.867928
+      61.217793       139.245270
+      45.275082       156.622650
+      69.021065       180.377350
+      54.532089       215.754715
+      36.633450       236.132065
+      64.399178       261.509460
+      49.131821       281.886780
+      28.771849       298.264160
+      59.590755       320.641479
+      43.247982       352.018860
+SRBF_CENTER_END
+
+
+
+
+
+################################# SRBF_SPREAD ############################
+#
+# The value of "delta" in the SRBF basis function. This spread has to be
+# carefully selected in order to obtain a good visual quality. A good
+# suggestion is to select the average of minimal geodesic distance between
+# any pair of neighboring SRBF centers (or the angle in radian between these
+# 2 SRBF centers).
+#
+# Syntax:
+#    SRBF_SPREAD <delta>
+# <delta> can be the average of minimal angles (in radian) between any two
+# neighboring SRBF centers.
+#
+SRBF_SPREAD  0.48
+
+
+
+
+
+
+############################# PROJECTION_TYPE ##############################
+#
+# As the relighting map can be regarded as cylindrical panorama or
+# perspective image. Its projection type must be specified. Each projection
+# type has is its own set of related fields. Currently, we only support two
+# types, cylindrical panorama (CYL_PANORAMA) and planar perspective images
+# (PLANAR_PERSP)
+# 
+# - Required field
+# - No default value
+# 
+# If projection type is CYL_PANORAMA, the following fields will be activated
+# - CYLINDER
+#
+# If projection type is PLANAR_PERSP, the following fields will be activated
+# - LIGHT_EYE_TRANSFORM_BEGIN
+# - FOV
+# 
+# Syntax:
+#    PROJECTION_TYPE <type>
+# <type> = CYL_PANORAMA | PLANAR_PERSP
+#
+PROJECTION_TYPE  PLANAR_PERSP
+
+
+
+
+
+
+########################## LIGHT_EYE_TRANSFORM ##########################
+#
+# Transformation matrix that transforms everything from light sample space
+# (the coordinate system where the lighting is sampled) to eye space. This
+# is a 4 x 4 matrix in post-multiplication form.  To correctly specify the
+# desired light source, this matrix is required to transform the virtual
+# desired light source to the eye space for computation of light vector L.
+# This field is activated when PROJECTION_TYPE is PLANAR_PERSP.
+#
+# - Optional field
+# - Default value: identity matrix
+#
+# Syntax:
+#    LIGHT_EYE_TRANSFORM_BEGIN
+#     <m00> <m01> <m02> <m03>
+#     <m10> <m11> <m12> <m13>
+#     <m20> <m21> <m22> <m23>
+#     <m30> <m31> <m32> <m33>
+#    LIGHT_EYE_TRANSFORM_END
+#
+LIGHT_EYE_TRANSFORM_BEGIN
+-0.8757    0.2068   -0.4364   -2.6670
+      0   -0.9037   -0.4281    5.1549
+-0.4829   -0.3749    0.7914    7.4950
+      0         0         0    1.0000
+LIGHT_EYE_TRANSFORM_END
+
+
+
+
+
+
+################################## FOV ##############################
+#
+# Field of view of the planar perspective image type. It is used for
+# correctly computing the light vector.
+#
+# - Optional field
+# - Default value:  90  90
+#
+# Syntax:
+#    FOV <Horizontal> <Vertical>
+# <Horizontal><Vertical> 
+# - horizontal and vertical FOV in degree. The viewing direction should
+#   bisect the FOV, i.e. if FOV is 90, there should be 45 to the left
+#   and 45 to the right.
+#
+FOV  90  90
+
+
+
+

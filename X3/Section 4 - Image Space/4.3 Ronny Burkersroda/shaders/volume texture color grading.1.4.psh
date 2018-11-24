@@ -1,0 +1,22 @@
+;------------------------------------------------------------------------------
+; volume texture color grading 1.4 pixel shader
+;------------------------------------------------------------------------------
+; constants specified by the application
+;
+; input
+;	t1		= texture coordinate of original image
+;------------------------------------------------------------------------------
+
+
+; declaration of required pixel shader version
+ps_1_4
+
+;------------------------------------------------------------------------------
+; color output
+;------------------------------------------------------------------------------
+
+texld		r1,			t0									; load original color
+
+phase
+
+texld		r0,			r1									; load graded color value

@@ -1,0 +1,109 @@
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086272 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086273 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086274 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086275 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086276 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086277 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086278 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086279 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086280 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086281 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086282 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086283 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086284 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086285 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086286 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(86) @CResourceManager::Add MaterialManager.CMaterialManager System: ID 4060086287 is in range of temporary ID's
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\Scene\ENG-D3S_PRSLinearController.cpp(36) @CPRSLinearController::LoadXML Controller.CPRSLinearController 'No support': No support for controller 'LINEAR' and values 'FLOAT'
+000000000328 WARN \Development\Dimension3_ShaderX3\Source\Engine\Scene\ENG-D3S_PRSLinearController.cpp(56) @CPRSLinearController::LoadXML Controller.CPRSLinearController 'No support': Cannot find 'POSITION' tag
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086279 (DX9_ShadowSoft_4060086279) left in manager
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086276 (DX9_ShadowSoft_4060086276) left in manager
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086274 (DX9_ShadowSoft_4060086274) left in manager
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086281 (DX9_ShadowSoft_4060086281) left in manager
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086275 (DX9_ShadowSoft_4060086275) left in manager
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086278 (DX9_ShadowSoft_4060086278) left in manager
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086283 (DX9_ShadowSoft_4060086283) left in manager
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086285 (DX9_ShadowSoft_4060086285) left in manager
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086272 (DX9_ShadowSoft_4060086272) left in manager
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086286 (DX9_ShadowSoft_4060086286) left in manager
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086280 (DX9_ShadowSoft_4060086280) left in manager
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086287 (DX9_ShadowSoft_4060086287) left in manager
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086284 (DX9_ShadowSoft_4060086284) left in manager
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086277 (DX9_ShadowSoft_4060086277) left in manager
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086282 (DX9_ShadowSoft_4060086282) left in manager
+000000004219 WARN \Development\Dimension3_ShaderX3\Source\Engine\ENG-ResourceManager.cpp(63) @CResourceManager::ReleaseAll MaterialManager.CResourceManager Memory: Resource 4060086273 (DX9_ShadowSoft_4060086273) left in manager
+
+
+--[END_LOG_SESSION]-[07/02/04 10:09:12]-----------------------------------------
+
+--[NEW_LOG_SESSION]-[08/16/04 19:14:41]-----------------------------------------
+
+LOG Err.MGR Starting up...
+
+
+--[END_LOG_SESSION]-[08/16/04 19:14:41]-----------------------------------------
+
+--[NEW_LOG_SESSION]-[08/16/04 19:14:44]-----------------------------------------
+
+LOG Err.MGR Starting up...
+000000000000 LOG  Err.MGR: Mem.MGR called request for ErrorManager. Reference count is 2
+000000000000 LOG  Mem.Mgr: Starting up...
+000000000000 LOG  Engine: Creating engine
+000000000000 LOG    MeshManager.CResourceManager: Creating
+000000000000 LOG    MeshManager.CResourceManager: Created
+000000000000 LOG    MeshManager.CMeshManager: Creating
+000000000000 LOG    TextureManager.CResourceManager: Creating
+000000000000 LOG    TextureManager.CResourceManager: Created
+000000000000 LOG    FileManager.CFileManager: Creating file manager
+000000000000 LOG    RuntimeCreator.CRuntimeCreator: Creating
+000000000000 LOG    MaterialManager.CResourceManager: Creating
+000000000000 LOG    MaterialManager.CResourceManager: Created
+000000000000 LOG    MaterialManager.CMaterialManager: Creating
+000000000000 LOG    ShaderManager.CResourceManager: Creating
+000000000000 LOG    ShaderManager.CResourceManager: Created
+000000000000 LOG    ShaderManager.CShaderManager: Creating
+000000000000 LOG  Engine: Engine created
+000000000000 LOG  Engine: ------------------------------------------------------------------------
+000000000000 LOG  Engine: -[Construct]------------------------------------------------------------
+000000000016 LOG  Engine: ------------------------------------------------------------------------
+000000000016 LOG  Engine: ------------------------------------------------------------------------
+000000000016 LOG  Engine: -[Destruct]-------------------------------------------------------------
+000000000016 LOG  Engine: ------------------------------------------------------------------------
+000000000016 LOG  Engine: Destroying engine
+000000000016 LOG    MeshManager.CMeshManager: Destroying
+000000000016 LOG    MeshManager.CResourceManager: Destroying
+000000000016 LOG      MeshManager.CResourceManager: Releasing all items
+000000000016 LOG      MeshManager.CResourceManager: All items deleted
+000000000016 LOG    MeshManager.CResourceManager: Destroyed
+000000000016 LOG    MaterialManager.CMaterialManager: Destroying
+000000000016 LOG    MaterialManager.CResourceManager: Destroying
+000000000016 LOG      MaterialManager.CResourceManager: Releasing all items
+000000000016 LOG      MaterialManager.CResourceManager: All items deleted
+000000000016 LOG    MaterialManager.CResourceManager: Destroyed
+000000000016 LOG    ShaderManager.CShaderManager: Destroying
+000000000016 LOG    ShaderManager.CResourceManager: Destroying
+000000000016 LOG      ShaderManager.CResourceManager: Releasing all items
+000000000016 LOG      ShaderManager.CResourceManager: All items deleted
+000000000016 LOG    ShaderManager.CResourceManager: Destroyed
+000000000016 LOG    TextureManager.CResourceManager: Destroying
+000000000016 LOG      TextureManager.CResourceManager: Releasing all items
+000000000016 LOG      TextureManager.CResourceManager: All items deleted
+000000000016 LOG    TextureManager.CResourceManager: Destroyed
+000000000016 LOG    FileManager.CFileManager: Destroying file manager
+000000000016 LOG    FileManager.CFileManager: Destroyed
+000000000016 LOG    RuntimeCreator.CRuntimeCreator: Destructing
+000000000016 LOG    RuntimeCreator.CRuntimeCreator: Destructed
+000000000016 LOG  Engine: Engine destroyed
+000000000016 LOG  Mem.Mgr: CEngine wanted to delete MemoryManager. Reference count is 0
+000000000016 LOG  Mem.Mgr: Destroying ...
+000000000016 LOG    Mem.Mgr: MEMORY_INFO:
+000000000016 LOG      Mem.Mgr: Peak heap size: 944
+000000000016 LOG      Mem.Mgr: Leak heap size: 0
+000000000016 LOG  Mem.Mgr: Destroyed
+000000000016 LOG  Err.MGR: Mem.MGR wanted to delete ErrorManager. Reference count is 1
+000000000016 LOG  Err.MGR: CEngine wanted to delete ErrorManager. Reference count is 0
+000000000016 LOG  Err.MGR: Shutting down...
+
+
+--[END_LOG_SESSION]-[08/16/04 19:14:44]-----------------------------------------
+

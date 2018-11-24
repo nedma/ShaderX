@@ -1,0 +1,30 @@
+// DX9 Pixel Shader by NVIDIA Cg compiler
+	ps_2_0
+// cgc version 1.2.1001, build date Mar 17 2004  10:32:28
+// command line args: -profile ps_2_0
+//vendor NVIDIA Corporation
+//version 1.0.02
+//profile ps_2_0
+//program main
+//semantic main.tex0
+//semantic main.tex1
+//var sampler2D tex0 :  : texunit 0 : 1 : 1
+//var sampler2D tex1 :  : texunit 1 : 2 : 1
+//var float4 IN.TexCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+//var float4 IN.TexCoord1 : $vin.TEXCOORD1 : TEX1 : 0 : 1
+//var half4 main.col : $vout.COL : COL : -1 : 1
+//var float main.depth : $vout.DEPR : DEPR : -1 : 1
+	dcl_2d	s0
+	dcl_2d	s1
+	def	c0,	1, 0, 0, 0
+	dcl	t0.xy
+	dcl	t1.xy
+texld   r0, t0, s0
+texld   r1, t1, s1
+add     r2.xyz, r0, r1
+mad     r2.xyz, -r0, r1, r2
+mov_pp  r0.xyz, r2
+mov_pp  r0.w, c0.x
+mov_pp  oC0, r0
+// 7 instructions, 3 R-regs.
+// End of program

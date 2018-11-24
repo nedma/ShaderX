@@ -1,0 +1,33 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  Proj : ShaderX 3
+//  File : glareAmountFP.cg
+//  Desc : computes glare amount
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+// define outputs from vertex shader
+struct VpOut
+{
+    float4 HPosition    : POSITION;    
+    float4 TexCoord0    : TEXCOORD0;
+    float4 TexCoord1    : TEXCOORD1;
+    float4 TexCoord2    : TEXCOORD2;
+    float4 TexCoord3    : TEXCOORD3;
+};
+
+fragout main(VpOut IN, uniform sampler2D tex0, uniform sampler2D tex1, uniform sampler2D tex2, uniform sampler2D tex3)
+{
+    fragout OUT;
+    float4 vTex0=tex2D(tex0, IN.TexCoord0.xy);
+    float4 vTex1=tex2D(tex1, IN.TexCoord1.xy);
+    float4 vTex2=tex2D(tex2, IN.TexCoord2.xy);
+    float4 vTex3=tex2D(tex3, IN.TexCoord3.xy);
+
+    float4 vAvg=saturate(vTex0*0.25+vTex1*0.25+vTex2*0.25+vTex3*0.25);
+    // exagerate values, to make effect more evident
+    vAvg=4*vAvg*vAvg;
+
+    // Output onlu average luminosity
+    OUT.col.xyz=dot(float3(0.3, 0.59, 0.11), vAvg.xyz);
+    OUT.col.w=0.025;
+    return OUT;
+}

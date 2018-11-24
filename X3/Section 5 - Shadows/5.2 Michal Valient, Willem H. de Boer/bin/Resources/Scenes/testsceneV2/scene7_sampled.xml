@@ -1,0 +1,2632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<D3F_SCENE
+    VERSION = "2"
+    STARTTIME = "0"
+    ENDTIME = "1600"
+    TICKSPERFRAME = "160"
+    FRAMERATE = "30"
+    CURRENTTIME = "0"
+    FRAMECOUNT = "11"
+    EXPECTEDNODES = "20"
+    EXPECTEDCHARACTERS = "0"
+    GLOBALSCALE = "1"
+>
+    <BACKGROUNDCOLOR  X = "0"  Y = "0"  Z = "0" />
+    <AMBIENTCOLOR  X = "0"  Y = "0"  Z = "0" />
+    <INFO><![CDATA[]]></INFO>
+
+
+    <D3F_MESHLINKS COUNT="8">
+        <D3F_MESHLINK ID="11" MESHNAME="Teapot01" MESHFILE="scene7_sampled.Teapot01.d3mesh"/>
+        <D3F_MESHLINK ID="7" MESHNAME="Sphere01" MESHFILE="scene7_sampled.Sphere01.d3mesh"/>
+        <D3F_MESHLINK ID="6" MESHNAME="ChamferBox05" MESHFILE="scene7_sampled.ChamferBox05.d3mesh"/>
+        <D3F_MESHLINK ID="5" MESHNAME="ChamferBox04" MESHFILE="scene7_sampled.ChamferBox04.d3mesh"/>
+        <D3F_MESHLINK ID="4" MESHNAME="ChamferBox03" MESHFILE="scene7_sampled.ChamferBox03.d3mesh"/>
+        <D3F_MESHLINK ID="3" MESHNAME="ChamferBox02" MESHFILE="scene7_sampled.ChamferBox02.d3mesh"/>
+        <D3F_MESHLINK ID="2" MESHNAME="ChamferBox01" MESHFILE="scene7_sampled.ChamferBox01.d3mesh"/>
+        <D3F_MESHLINK ID="1" MESHNAME="Box01" MESHFILE="scene7_sampled.Box01.d3mesh"/>
+    </D3F_MESHLINKS>
+
+
+    <D3F_OBJECTS COUNT="12">
+        <D3F_OBJECT
+            NAME = "Camera01.Target"
+            ID = "15"
+            PARENTID = "0"
+            MASTERID = "-1"
+            TARGETID = "-1"
+            MESHID = "15"
+            LOCALPRS = "1"
+            ISTARGET = "1"
+            ISINSTANCE = "0"
+        >
+            <PRS>
+                <POSITION  X = "-4.09924"  Y = "23.4672"  Z = "12.1122" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </PRS>
+            <LOCALPIVOT>
+                <POSITION  X = "-4.09924"  Y = "23.4672"  Z = "12.1122" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </LOCALPIVOT>
+            <WORLDPIVOT>
+                <POSITION  X = "-4.09924"  Y = "23.4672"  Z = "12.1122" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </WORLDPIVOT>
+        </D3F_OBJECT>
+        <D3F_OBJECT
+            NAME = "Teapot01"
+            ID = "11"
+            PARENTID = "1"
+            MASTERID = "-1"
+            TARGETID = "-1"
+            MESHID = "11"
+            LOCALPRS = "1"
+            ISTARGET = "0"
+            ISINSTANCE = "0"
+        >
+            <PRS>
+                <POSITION  X = "-1.00562"  Y = "95.8066"  Z = "-0.46189" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </PRS>
+            <LOCALPIVOT>
+                <POSITION  X = "-1.00562"  Y = "95.8066"  Z = "-0.46189" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </LOCALPIVOT>
+            <WORLDPIVOT>
+                <POSITION  X = "-1.20486"  Y = "95.8066"  Z = "0.0217853" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </WORLDPIVOT>
+        </D3F_OBJECT>
+        <D3F_OBJECT
+            NAME = "Sphere04"
+            ID = "10"
+            PARENTID = "1"
+            MASTERID = "7"
+            TARGETID = "-1"
+            MESHID = "7"
+            LOCALPRS = "1"
+            ISTARGET = "0"
+            ISINSTANCE = "1"
+        >
+            <PRS>
+                <POSITION  X = "113.909"  Y = "122.747"  Z = "114.175" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </PRS>
+            <LOCALPIVOT>
+                <POSITION  X = "113.909"  Y = "122.747"  Z = "114.175" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </LOCALPIVOT>
+            <WORLDPIVOT>
+                <POSITION  X = "113.71"  Y = "122.747"  Z = "114.659" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </WORLDPIVOT>
+        </D3F_OBJECT>
+        <D3F_OBJECT
+            NAME = "Sphere03"
+            ID = "9"
+            PARENTID = "1"
+            MASTERID = "7"
+            TARGETID = "-1"
+            MESHID = "7"
+            LOCALPRS = "1"
+            ISTARGET = "0"
+            ISINSTANCE = "1"
+        >
+            <PRS>
+                <POSITION  X = "-119.028"  Y = "122.747"  Z = "114.175" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </PRS>
+            <LOCALPIVOT>
+                <POSITION  X = "-119.028"  Y = "122.747"  Z = "114.175" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </LOCALPIVOT>
+            <WORLDPIVOT>
+                <POSITION  X = "-119.227"  Y = "122.747"  Z = "114.659" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </WORLDPIVOT>
+        </D3F_OBJECT>
+        <D3F_OBJECT
+            NAME = "Sphere02"
+            ID = "8"
+            PARENTID = "1"
+            MASTERID = "7"
+            TARGETID = "-1"
+            MESHID = "7"
+            LOCALPRS = "1"
+            ISTARGET = "0"
+            ISINSTANCE = "1"
+        >
+            <PRS>
+                <POSITION  X = "-119.028"  Y = "122.747"  Z = "-117.279" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </PRS>
+            <LOCALPIVOT>
+                <POSITION  X = "-119.028"  Y = "122.747"  Z = "-117.279" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </LOCALPIVOT>
+            <WORLDPIVOT>
+                <POSITION  X = "-119.227"  Y = "122.747"  Z = "-116.795" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </WORLDPIVOT>
+        </D3F_OBJECT>
+        <D3F_OBJECT
+            NAME = "Sphere01"
+            ID = "7"
+            PARENTID = "1"
+            MASTERID = "-1"
+            TARGETID = "-1"
+            MESHID = "7"
+            LOCALPRS = "1"
+            ISTARGET = "0"
+            ISINSTANCE = "0"
+        >
+            <PRS>
+                <POSITION  X = "114.627"  Y = "122.747"  Z = "-117.279" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </PRS>
+            <LOCALPIVOT>
+                <POSITION  X = "114.627"  Y = "122.747"  Z = "-117.279" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </LOCALPIVOT>
+            <WORLDPIVOT>
+                <POSITION  X = "114.428"  Y = "122.747"  Z = "-116.795" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </WORLDPIVOT>
+        </D3F_OBJECT>
+        <D3F_OBJECT
+            NAME = "ChamferBox05"
+            ID = "6"
+            PARENTID = "1"
+            MASTERID = "-1"
+            TARGETID = "-1"
+            MESHID = "6"
+            LOCALPRS = "1"
+            ISTARGET = "0"
+            ISINSTANCE = "0"
+        >
+            <PRS>
+                <POSITION  X = "3.21771"  Y = "10.1835"  Z = "-1.6312" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </PRS>
+            <LOCALPIVOT>
+                <POSITION  X = "3.21771"  Y = "10.1835"  Z = "-1.6312" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </LOCALPIVOT>
+            <WORLDPIVOT>
+                <POSITION  X = "3.01847"  Y = "10.1835"  Z = "-1.14752" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </WORLDPIVOT>
+        </D3F_OBJECT>
+        <D3F_OBJECT
+            NAME = "ChamferBox04"
+            ID = "5"
+            PARENTID = "1"
+            MASTERID = "-1"
+            TARGETID = "-1"
+            MESHID = "5"
+            LOCALPRS = "1"
+            ISTARGET = "0"
+            ISINSTANCE = "0"
+        >
+            <PRS>
+                <POSITION  X = "115.725"  Y = "9.47171"  Z = "114.78" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </PRS>
+            <LOCALPIVOT>
+                <POSITION  X = "115.725"  Y = "9.47171"  Z = "114.78" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </LOCALPIVOT>
+            <WORLDPIVOT>
+                <POSITION  X = "115.526"  Y = "9.47171"  Z = "115.264" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </WORLDPIVOT>
+        </D3F_OBJECT>
+        <D3F_OBJECT
+            NAME = "ChamferBox03"
+            ID = "4"
+            PARENTID = "1"
+            MASTERID = "-1"
+            TARGETID = "-1"
+            MESHID = "4"
+            LOCALPRS = "1"
+            ISTARGET = "0"
+            ISINSTANCE = "0"
+        >
+            <PRS>
+                <POSITION  X = "-117.212"  Y = "9.47171"  Z = "114.78" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </PRS>
+            <LOCALPIVOT>
+                <POSITION  X = "-117.212"  Y = "9.47171"  Z = "114.78" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </LOCALPIVOT>
+            <WORLDPIVOT>
+                <POSITION  X = "-117.411"  Y = "9.47171"  Z = "115.264" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </WORLDPIVOT>
+        </D3F_OBJECT>
+        <D3F_OBJECT
+            NAME = "ChamferBox02"
+            ID = "3"
+            PARENTID = "1"
+            MASTERID = "-1"
+            TARGETID = "-1"
+            MESHID = "3"
+            LOCALPRS = "1"
+            ISTARGET = "0"
+            ISINSTANCE = "0"
+        >
+            <PRS>
+                <POSITION  X = "-117.212"  Y = "9.47171"  Z = "-116.673" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </PRS>
+            <LOCALPIVOT>
+                <POSITION  X = "-117.212"  Y = "9.47171"  Z = "-116.673" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </LOCALPIVOT>
+            <WORLDPIVOT>
+                <POSITION  X = "-117.411"  Y = "9.47171"  Z = "-116.19" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </WORLDPIVOT>
+        </D3F_OBJECT>
+        <D3F_OBJECT
+            NAME = "ChamferBox01"
+            ID = "2"
+            PARENTID = "1"
+            MASTERID = "-1"
+            TARGETID = "-1"
+            MESHID = "2"
+            LOCALPRS = "1"
+            ISTARGET = "0"
+            ISINSTANCE = "0"
+        >
+            <PRS>
+                <POSITION  X = "116.443"  Y = "9.47171"  Z = "-116.673" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </PRS>
+            <LOCALPIVOT>
+                <POSITION  X = "116.443"  Y = "9.47171"  Z = "-116.673" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </LOCALPIVOT>
+            <WORLDPIVOT>
+                <POSITION  X = "116.244"  Y = "9.47171"  Z = "-116.19" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </WORLDPIVOT>
+        </D3F_OBJECT>
+        <D3F_OBJECT
+            NAME = "Box01"
+            ID = "1"
+            PARENTID = "0"
+            MASTERID = "-1"
+            TARGETID = "-1"
+            MESHID = "1"
+            LOCALPRS = "1"
+            ISTARGET = "0"
+            ISINSTANCE = "0"
+        >
+            <PRS>
+                <POSITION  X = "-0.199236"  Y = "0"  Z = "0.483675" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </PRS>
+            <LOCALPIVOT>
+                <POSITION  X = "-0.199236"  Y = "0"  Z = "0.483675" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </LOCALPIVOT>
+            <WORLDPIVOT>
+                <POSITION  X = "-0.199236"  Y = "0"  Z = "0.483675" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </WORLDPIVOT>
+        </D3F_OBJECT>
+        <D3F_OBJECT
+            NAME = "Spot02.Target"
+            ID = "17"
+            PARENTID = "0"
+            MASTERID = "-1"
+            TARGETID = "-1"
+            MESHID = "17"
+            LOCALPRS = "1"
+            ISTARGET = "1"
+            ISINSTANCE = "0"
+        >
+            <PRS>
+                <POSITION  X = "5.82614"  Y = "23.1202"  Z = "8.40524" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </PRS>
+            <LOCALPIVOT>
+                <POSITION  X = "5.82614"  Y = "23.1202"  Z = "8.40524" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </LOCALPIVOT>
+            <WORLDPIVOT>
+                <POSITION  X = "5.82614"  Y = "23.1202"  Z = "8.40524" />
+                <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </WORLDPIVOT>
+        </D3F_OBJECT>
+    </D3F_OBJECTS>
+
+
+    <D3F_LIGHTS COUNT="1">
+        <D3F_LIGHT
+            NAME = "Spot02"
+            ID = "16"
+            PARENTID = "0"
+            MASTERID = "-1"
+            TARGETID = "17"
+            MESHID = "-1"
+            LOCALPRS = "1"
+            ISTARGET = "0"
+            ISINSTANCE = "0"
+            LIGHTTYPE = "TARGETED_SPOTLIGHT"
+            INTENSITY = "1"
+            CONTRAST = "0"
+            DIFFUSESOFT = "50"
+            LIGHTUSED = "1"
+            AFFECTDIFFUSE = "1"
+            AFFECTSPECULAR = "1"
+            USEATTENNEAR = "1"
+            USEATTENFAR = "1"
+            NEARATTENSTART = "283"
+            NEARATTENEND = "283"
+            FARATTENSTART = "959"
+            FARATTENEND = "981"
+            DECAYTYPE = "NONE"
+            HOTSPOT = "53.6164"
+            FALLOFF = "55.6164"
+            ASPECT = "1"
+            SPOTSHAPE = "CIRCLE"
+            SHADOWTYPE = "0"
+            ABSMAPBIAS = "0"
+            RAYBIAS = "0"
+            MAPBIAS = "1"
+            MAPRANGE = "4"
+            MAPSIZE = "512"
+            CASTSHADOWS = "1"
+            LIGHTAFFECTSSHADOW = "0"
+            SHADOWDENSITY = "1"
+            PROJMAPID = "-1"
+            SHADOWPROJMAPID = "-1"
+        >
+            <PRS>
+                <POSITION  X = "1.9521"  Y = "201.175"  Z = "-631.055" />
+                <ROTATION  X = "-0.604879"  Y = "0.00241212"  Z = "0.00183225"  W = "0.796312" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </PRS>
+            <LOCALPIVOT>
+                <POSITION  X = "1.9521"  Y = "201.175"  Z = "-631.055" />
+                <ROTATION  X = "-0.604879"  Y = "0.00241212"  Z = "0.00183225"  W = "0.796312" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </LOCALPIVOT>
+            <WORLDPIVOT>
+                <POSITION  X = "1.9521"  Y = "201.175"  Z = "-631.055" />
+                <ROTATION  X = "-0.604879"  Y = "0.00241212"  Z = "0.00183225"  W = "0.796312" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </WORLDPIVOT>
+            <SHADOWCOLOR  X = "0"  Y = "0"  Z = "0" />
+            <COLOR  X = "0"  Y = "0"  Z = "1" />
+        </D3F_LIGHT>
+    </D3F_LIGHTS>
+
+
+    <D3F_CAMERAS COUNT="1">
+        <D3F_CAMERA
+            NAME = "Camera01"
+            ID = "14"
+            PARENTID = "0"
+            MASTERID = "-1"
+            TARGETID = "15"
+            MESHID = "-1"
+            LOCALPRS = "1"
+            ISTARGET = "0"
+            ISINSTANCE = "0"
+            ORTHOGONAL = "0"
+            FOV = "45.0001"
+            NEARCLIP = "317"
+            FARCLIP = "834"
+            ENVNEARRANGE = "0"
+            ENVFARRANGE = "1000"
+            MANUALCLIP = "1"
+            FOVTYPE = "HORIZONTAL"
+            CAMTYPE = "TARGET"
+        >
+            <PRS>
+                <POSITION  X = "361.67"  Y = "38.8732"  Z = "-448.759" />
+                <ROTATION  X = "-0.658903"  Y = "-0.235787"  Z = "-0.229694"  W = "0.676381" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </PRS>
+            <LOCALPIVOT>
+                <POSITION  X = "361.67"  Y = "38.8732"  Z = "-448.759" />
+                <ROTATION  X = "-0.658903"  Y = "-0.235787"  Z = "-0.229694"  W = "0.676381" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </LOCALPIVOT>
+            <WORLDPIVOT>
+                <POSITION  X = "361.67"  Y = "38.8732"  Z = "-448.759" />
+                <ROTATION  X = "-0.658903"  Y = "-0.235787"  Z = "-0.229694"  W = "0.676381" />
+                <SCALE  X = "1"  Y = "1"  Z = "1" />
+            </WORLDPIVOT>
+        </D3F_CAMERA>
+    </D3F_CAMERAS>
+
+
+    <D3F_MATERIALS COUNT="3">
+        <D3F_MATERIAL
+            ID = "2"
+            NAME = "2 - DefaultX"
+            AMBIENTMAPID = "4"
+            DIFFUSEMAPID = "4"
+            SPECULARMAPID = "4"
+            SHININESSMAPID = "4"
+            SHININGSTRENGTHMAPID = "-1"
+            SELFILLUMMAPID = "-1"
+            OPACITYMAPID = "-1"
+            FILTERMAPID = "-1"
+            BUMPMAPID = "5"
+            REFLECTIONMAPID = "-1"
+            REFRACTIONMAPID = "-1"
+            DISPLACEMENTMAPID = "-1"
+            AMBIENTCOEFF = "1"
+            DIFFUSECOEFF = "1"
+            SPECULARCOEFF = "1"
+            SHININESSCOEFF = "1"
+            SHININGSTRENGTHCOEFF = "1"
+            SELFILLUMCOEFF = "1"
+            OPACITYCOEFF = "1"
+            FILTERCOEFF = "1"
+            BUMPCOEFF = "0.3"
+            REFLECTIONCOEFF = "1"
+            REFRACTIONCOEFF = "1"
+            DISPLACEMENTCOEFF = "1"
+            SHADING = "3"
+            SOFTEN = "0"
+            FACEMAP = "0"
+            TWOSIDED = "0"
+            WIRE = "0"
+            WIREUNITS = "0"
+            FALLOFFOUT = "0"
+            TRANSPARENCYTYPE = "2"
+            SHININESS = "0.45"
+            SHININGSTRENGTH = "1"
+            SELFILLUM = "0"
+            OPACITY = "1"
+            OPACITYFALLOFF = "0"
+            WIRESIZE = "1"
+            IOR = "1.5"
+            BOUNCE = "1"
+            STATICFRICTION = "0"
+            SLIDINGFRICTION = "0"
+            SELFILLUMON = "0"
+            SELFILLUMVALUE = "0"
+        >
+            <AMBIENTCOLOR  X = "0"  Y = "0"  Z = "0" />
+            <DIFFUSECOLOR  X = "1"  Y = "1"  Z = "1" />
+            <SPECULARCOLOR  X = "1"  Y = "0.988235"  Z = "0.00392157" />
+            <FILTERCOLOR  X = "0.5"  Y = "0.5"  Z = "0.5" />
+            <SELFILLUMCOLOR  X = "0"  Y = "0"  Z = "0" />
+        </D3F_MATERIAL>
+        <D3F_MATERIAL
+            ID = "1"
+            NAME = "2 - Default"
+            AMBIENTMAPID = "2"
+            DIFFUSEMAPID = "2"
+            SPECULARMAPID = "2"
+            SHININESSMAPID = "2"
+            SHININGSTRENGTHMAPID = "-1"
+            SELFILLUMMAPID = "-1"
+            OPACITYMAPID = "-1"
+            FILTERMAPID = "-1"
+            BUMPMAPID = "3"
+            REFLECTIONMAPID = "-1"
+            REFRACTIONMAPID = "-1"
+            DISPLACEMENTMAPID = "-1"
+            AMBIENTCOEFF = "1"
+            DIFFUSECOEFF = "1"
+            SPECULARCOEFF = "1"
+            SHININESSCOEFF = "1"
+            SHININGSTRENGTHCOEFF = "1"
+            SELFILLUMCOEFF = "1"
+            OPACITYCOEFF = "1"
+            FILTERCOEFF = "1"
+            BUMPCOEFF = "0.999999"
+            REFLECTIONCOEFF = "1"
+            REFRACTIONCOEFF = "1"
+            DISPLACEMENTCOEFF = "1"
+            SHADING = "3"
+            SOFTEN = "0"
+            FACEMAP = "0"
+            TWOSIDED = "0"
+            WIRE = "0"
+            WIREUNITS = "0"
+            FALLOFFOUT = "1"
+            TRANSPARENCYTYPE = "2"
+            SHININESS = "0.4"
+            SHININGSTRENGTH = "1"
+            SELFILLUM = "0"
+            OPACITY = "1"
+            OPACITYFALLOFF = "0"
+            WIRESIZE = "1"
+            IOR = "1.2"
+            BOUNCE = "1"
+            STATICFRICTION = "0"
+            SLIDINGFRICTION = "0"
+            SELFILLUMON = "0"
+            SELFILLUMVALUE = "0"
+        >
+            <AMBIENTCOLOR  X = "0"  Y = "0"  Z = "0" />
+            <DIFFUSECOLOR  X = "1"  Y = "1"  Z = "1" />
+            <SPECULARCOLOR  X = "1"  Y = "0.00392157"  Z = "0.00392157" />
+            <FILTERCOLOR  X = "0.5"  Y = "0.5"  Z = "0.5" />
+            <SELFILLUMCOLOR  X = "0"  Y = "0"  Z = "0" />
+        </D3F_MATERIAL>
+        <D3F_MATERIAL
+            ID = "0"
+            NAME = "Floor"
+            AMBIENTMAPID = "0"
+            DIFFUSEMAPID = "0"
+            SPECULARMAPID = "0"
+            SHININESSMAPID = "0"
+            SHININGSTRENGTHMAPID = "-1"
+            SELFILLUMMAPID = "-1"
+            OPACITYMAPID = "-1"
+            FILTERMAPID = "-1"
+            BUMPMAPID = "1"
+            REFLECTIONMAPID = "-1"
+            REFRACTIONMAPID = "-1"
+            DISPLACEMENTMAPID = "-1"
+            AMBIENTCOEFF = "1"
+            DIFFUSECOEFF = "1"
+            SPECULARCOEFF = "1"
+            SHININESSCOEFF = "1"
+            SHININGSTRENGTHCOEFF = "1"
+            SELFILLUMCOEFF = "1"
+            OPACITYCOEFF = "1"
+            FILTERCOEFF = "1"
+            BUMPCOEFF = "0.3"
+            REFLECTIONCOEFF = "1"
+            REFRACTIONCOEFF = "1"
+            DISPLACEMENTCOEFF = "1"
+            SHADING = "1"
+            SOFTEN = "0"
+            FACEMAP = "0"
+            TWOSIDED = "0"
+            WIRE = "0"
+            WIREUNITS = "0"
+            FALLOFFOUT = "0"
+            TRANSPARENCYTYPE = "2"
+            SHININESS = "0.1"
+            SHININGSTRENGTH = "1"
+            SELFILLUM = "0"
+            OPACITY = "1"
+            OPACITYFALLOFF = "0"
+            WIRESIZE = "1"
+            IOR = "1.5"
+            BOUNCE = "1"
+            STATICFRICTION = "0"
+            SLIDINGFRICTION = "0"
+            SELFILLUMON = "0"
+            SELFILLUMVALUE = "0"
+        >
+            <AMBIENTCOLOR  X = "0"  Y = "0"  Z = "0" />
+            <DIFFUSECOLOR  X = "1"  Y = "1"  Z = "1" />
+            <SPECULARCOLOR  X = "1"  Y = "1"  Z = "1" />
+            <FILTERCOLOR  X = "0.5"  Y = "0.5"  Z = "0.5" />
+            <SELFILLUMCOLOR  X = "0.27451"  Y = "0.27451"  Z = "0.27451" />
+        </D3F_MATERIAL>
+    </D3F_MATERIALS>
+
+
+    <D3F_TEXTURES COUNT="6">
+        <D3F_TEXTURE
+            ID = "5"
+            NAME = "S7_Hands_Norm.dds"
+            TEXTURECROP_OFFSETU = "0"
+            TEXTURECROP_OFFSETV = "0"
+            TEXTURECROP_SCALEU = "1"
+            TEXTURECROP_SCALEV = "1"
+        >
+            <TEXTUREMATRIX  M_00 = "1"  M_10 = "0"  M_20 = "0"  M_30 = "0"
+                            M_01 = "0"  M_11 = "1"  M_21 = "0"  M_31 = "0"
+                            M_02 = "0"  M_12 = "0"  M_22 = "1"  M_32 = "0"
+                            M_03 = "0"  M_13 = "0"  M_23 = "0"  M_33 = "1" />
+        </D3F_TEXTURE>
+        <D3F_TEXTURE
+            ID = "4"
+            NAME = "S7_Hands.dds"
+            TEXTURECROP_OFFSETU = "0"
+            TEXTURECROP_OFFSETV = "0"
+            TEXTURECROP_SCALEU = "1"
+            TEXTURECROP_SCALEV = "1"
+        >
+            <TEXTUREMATRIX  M_00 = "1"  M_10 = "0"  M_20 = "0"  M_30 = "0"
+                            M_01 = "0"  M_11 = "1"  M_21 = "0"  M_31 = "0"
+                            M_02 = "0"  M_12 = "0"  M_22 = "1"  M_32 = "0"
+                            M_03 = "0"  M_13 = "0"  M_23 = "0"  M_33 = "1" />
+        </D3F_TEXTURE>
+        <D3F_TEXTURE
+            ID = "3"
+            NAME = "S5_Wall_Bump.dds"
+            TEXTURECROP_OFFSETU = "0"
+            TEXTURECROP_OFFSETV = "0"
+            TEXTURECROP_SCALEU = "1"
+            TEXTURECROP_SCALEV = "1"
+        >
+            <TEXTUREMATRIX  M_00 = "1"  M_10 = "0"  M_20 = "0"  M_30 = "0"
+                            M_01 = "0"  M_11 = "1"  M_21 = "0"  M_31 = "0"
+                            M_02 = "0"  M_12 = "0"  M_22 = "1"  M_32 = "0"
+                            M_03 = "0"  M_13 = "0"  M_23 = "0"  M_33 = "1" />
+        </D3F_TEXTURE>
+        <D3F_TEXTURE
+            ID = "2"
+            NAME = "S5_Wall.dds"
+            TEXTURECROP_OFFSETU = "0"
+            TEXTURECROP_OFFSETV = "0"
+            TEXTURECROP_SCALEU = "1"
+            TEXTURECROP_SCALEV = "1"
+        >
+            <TEXTUREMATRIX  M_00 = "1"  M_10 = "0"  M_20 = "0"  M_30 = "0"
+                            M_01 = "0"  M_11 = "1"  M_21 = "0"  M_31 = "0"
+                            M_02 = "0"  M_12 = "0"  M_22 = "1"  M_32 = "0"
+                            M_03 = "0"  M_13 = "0"  M_23 = "0"  M_33 = "1" />
+        </D3F_TEXTURE>
+        <D3F_TEXTURE
+            ID = "1"
+            NAME = "S5_Tiles_Bump.dds"
+            TEXTURECROP_OFFSETU = "0"
+            TEXTURECROP_OFFSETV = "0"
+            TEXTURECROP_SCALEU = "1"
+            TEXTURECROP_SCALEV = "1"
+        >
+            <TEXTUREMATRIX  M_00 = "1"  M_10 = "0"  M_20 = "0"  M_30 = "0"
+                            M_01 = "0"  M_11 = "1"  M_21 = "0"  M_31 = "0"
+                            M_02 = "0"  M_12 = "0"  M_22 = "1"  M_32 = "0"
+                            M_03 = "0"  M_13 = "0"  M_23 = "0"  M_33 = "1" />
+        </D3F_TEXTURE>
+        <D3F_TEXTURE
+            ID = "0"
+            NAME = "S5_Tiles.dds"
+            TEXTURECROP_OFFSETU = "0"
+            TEXTURECROP_OFFSETV = "0"
+            TEXTURECROP_SCALEU = "1"
+            TEXTURECROP_SCALEV = "1"
+        >
+            <TEXTUREMATRIX  M_00 = "1"  M_10 = "0"  M_20 = "0"  M_30 = "0"
+                            M_01 = "0"  M_11 = "1"  M_21 = "0"  M_31 = "0"
+                            M_02 = "0"  M_12 = "0"  M_22 = "1"  M_32 = "0"
+                            M_03 = "0"  M_13 = "0"  M_23 = "0"  M_33 = "1" />
+        </D3F_TEXTURE>
+    </D3F_TEXTURES>
+    <D3F_CONTROLLERS COUNT="20">
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "15"
+            OWNERID = "16"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "1.9521"  Y = "201.175"  Z = "-631.055" />
+                    <ROTATION  X = "-0.604879"  Y = "0.00241212"  Z = "0.00183225"  W = "0.796312" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "395.614"  Y = "236.846"  Z = "-374.247" />
+                    <ROTATION  X = "-0.519832"  Y = "-0.319598"  Z = "-0.21814"  W = "0.761608" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "585.068"  Y = "261.125"  Z = "-106.995" />
+                    <ROTATION  X = "-0.432606"  Y = "-0.525678"  Z = "-0.354921"  W = "0.640738" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "530.074"  Y = "272.617"  Z = "227.243" />
+                    <ROTATION  X = "-0.303138"  Y = "-0.69682"  Z = "-0.455028"  W = "0.464219" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "286.757"  Y = "270.731"  Z = "540.272" />
+                    <ROTATION  X = "-0.133884"  Y = "-0.806456"  Z = "-0.540133"  W = "0.199898" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-56.2552"  Y = "267.647"  Z = "710.793" />
+                    <ROTATION  X = "0.0255489"  Y = "-0.813961"  Z = "-0.579246"  W = "-0.0359014" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-390.872"  Y = "267.647"  Z = "497.345" />
+                    <ROTATION  X = "0.188781"  Y = "-0.77777"  Z = "-0.532306"  W = "-0.275835" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-640.778"  Y = "267.647"  Z = "185.772" />
+                    <ROTATION  X = "0.347663"  Y = "-0.651497"  Z = "-0.455871"  W = "-0.496854" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-634.966"  Y = "267.647"  Z = "-189.131" />
+                    <ROTATION  X = "-0.461266"  Y = "0.486591"  Z = "0.340492"  W = "0.659187" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-349.706"  Y = "267.647"  Z = "-459.699" />
+                    <ROTATION  X = "-0.525927"  Y = "0.265458"  Z = "0.177082"  W = "0.7884" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-3.27064"  Y = "267.647"  Z = "-650.756" />
+                    <ROTATION  X = "-0.571048"  Y = "0.00566408"  Z = "0.0039402"  W = "0.820887" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "14"
+            OWNERID = "15"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-4.09924"  Y = "23.4672"  Z = "12.1122" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-4.09924"  Y = "23.4672"  Z = "12.1122" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-4.09924"  Y = "23.4672"  Z = "12.1122" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-4.09924"  Y = "23.4672"  Z = "12.1122" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-4.09924"  Y = "23.4672"  Z = "12.1122" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-4.09924"  Y = "23.4672"  Z = "12.1122" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-4.09924"  Y = "23.4672"  Z = "12.1122" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-4.09924"  Y = "23.4672"  Z = "12.1122" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-4.09924"  Y = "23.4672"  Z = "12.1122" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-4.09924"  Y = "23.4672"  Z = "12.1122" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-4.09924"  Y = "23.4672"  Z = "12.1122" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "13"
+            OWNERID = "14"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "361.67"  Y = "38.8732"  Z = "-448.759" />
+                    <ROTATION  X = "-0.658903"  Y = "-0.235787"  Z = "-0.229694"  W = "0.676381" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "307.312"  Y = "227.523"  Z = "-432.962" />
+                    <ROTATION  X = "-0.543037"  Y = "-0.247069"  Z = "-0.171114"  W = "0.784084" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "239.403"  Y = "404.519"  Z = "-381.02" />
+                    <ROTATION  X = "-0.41036"  Y = "-0.247573"  Z = "-0.116792"  W = "0.869869" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "163.487"  Y = "527.161"  Z = "-281.363" />
+                    <ROTATION  X = "-0.281456"  Y = "-0.245409"  Z = "-0.0747006"  W = "0.924649" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "91.3201"  Y = "580.906"  Z = "-151.328" />
+                    <ROTATION  X = "-0.157265"  Y = "-0.257666"  Z = "-0.0425472"  W = "0.9524" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "20.8584"  Y = "610.786"  Z = "-14.9025" />
+                    <ROTATION  X = "-0.0291159"  Y = "-0.364158"  Z = "-0.0113909"  W = "0.930812" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "85.7729"  Y = "579.074"  Z = "-152.983" />
+                    <ROTATION  X = "-0.157375"  Y = "-0.243406"  Z = "-0.0400592"  W = "0.956233" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "154.326"  Y = "524.662"  Z = "-281.635" />
+                    <ROTATION  X = "-0.280721"  Y = "-0.234307"  Z = "-0.0708748"  W = "0.928047" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "229.748"  Y = "402.209"  Z = "-380.288" />
+                    <ROTATION  X = "-0.41002"  Y = "-0.240287"  Z = "-0.112909"  W = "0.872581" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "301.374"  Y = "226.16"  Z = "-432.357" />
+                    <ROTATION  X = "-0.543689"  Y = "-0.243795"  Z = "-0.168819"  W = "0.785154" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "361.67"  Y = "38.8733"  Z = "-448.759" />
+                    <ROTATION  X = "-0.658903"  Y = "-0.235787"  Z = "-0.229694"  W = "0.676381" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "12"
+            OWNERID = "13"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "11"
+            OWNERID = "12"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "1066.65"  Y = "1882.43"  Z = "-287.377" />
+                    <ROTATION  X = "-0.210208"  Y = "-0.585732"  Z = "-0.160718"  W = "0.766095" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "1066.65"  Y = "1882.43"  Z = "-287.377" />
+                    <ROTATION  X = "-0.210208"  Y = "-0.585732"  Z = "-0.160718"  W = "0.766095" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "1066.65"  Y = "1882.43"  Z = "-287.377" />
+                    <ROTATION  X = "-0.210208"  Y = "-0.585732"  Z = "-0.160718"  W = "0.766095" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "1066.65"  Y = "1882.43"  Z = "-287.377" />
+                    <ROTATION  X = "-0.210208"  Y = "-0.585732"  Z = "-0.160718"  W = "0.766095" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "1066.65"  Y = "1882.43"  Z = "-287.377" />
+                    <ROTATION  X = "-0.210208"  Y = "-0.585732"  Z = "-0.160718"  W = "0.766095" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "1066.65"  Y = "1882.43"  Z = "-287.377" />
+                    <ROTATION  X = "-0.210208"  Y = "-0.585732"  Z = "-0.160718"  W = "0.766095" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "1066.65"  Y = "1882.43"  Z = "-287.377" />
+                    <ROTATION  X = "-0.210208"  Y = "-0.585732"  Z = "-0.160718"  W = "0.766095" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "1066.65"  Y = "1882.43"  Z = "-287.377" />
+                    <ROTATION  X = "-0.210208"  Y = "-0.585732"  Z = "-0.160718"  W = "0.766095" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "1066.65"  Y = "1882.43"  Z = "-287.377" />
+                    <ROTATION  X = "-0.210208"  Y = "-0.585732"  Z = "-0.160718"  W = "0.766095" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "1066.65"  Y = "1882.43"  Z = "-287.377" />
+                    <ROTATION  X = "-0.210208"  Y = "-0.585732"  Z = "-0.160718"  W = "0.766095" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "1066.65"  Y = "1882.43"  Z = "-287.377" />
+                    <ROTATION  X = "-0.210208"  Y = "-0.585732"  Z = "-0.160718"  W = "0.766095" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "10"
+            OWNERID = "11"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-1.00562"  Y = "95.8066"  Z = "-0.46189" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-1.00562"  Y = "95.8066"  Z = "-0.46189" />
+                    <ROTATION  X = "0"  Y = "-0.296541"  Z = "0"  W = "0.95502" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-1.00562"  Y = "95.8066"  Z = "-0.46189" />
+                    <ROTATION  X = "0"  Y = "-0.566406"  Z = "0"  W = "0.824127" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-1.00562"  Y = "95.8066"  Z = "-0.46189" />
+                    <ROTATION  X = "0"  Y = "-0.785316"  Z = "0"  W = "0.619095" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-1.00562"  Y = "95.8066"  Z = "-0.46189" />
+                    <ROTATION  X = "0"  Y = "-0.93358"  Z = "0"  W = "0.358369" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-1.00562"  Y = "95.8066"  Z = "-0.46189" />
+                    <ROTATION  X = "0"  Y = "-0.997859"  Z = "0"  W = "0.0654033" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-1.00562"  Y = "95.8066"  Z = "-0.46189" />
+                    <ROTATION  X = "0"  Y = "-0.97237"  Z = "0"  W = "-0.233446" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-1.00562"  Y = "95.8066"  Z = "-0.46189" />
+                    <ROTATION  X = "0"  Y = "0.859406"  Z = "0"  W = "0.511293" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-1.00562"  Y = "95.8066"  Z = "-0.46189" />
+                    <ROTATION  X = "0"  Y = "0.66913"  Z = "0"  W = "0.743145" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-1.00562"  Y = "95.8066"  Z = "-0.46189" />
+                    <ROTATION  X = "0"  Y = "0.418659"  Z = "0"  W = "0.908143" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-1.00562"  Y = "95.8066"  Z = "-0.46189" />
+                    <ROTATION  X = "0"  Y = "0.130526"  Z = "0"  W = "0.991445" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "9"
+            OWNERID = "10"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "113.909"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "113.909"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "2.54717e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "113.909"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "113.909"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "1.85704e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "113.909"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "-1.79853e-008"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "113.909"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "113.909"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "5.77828e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "113.909"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "113.909"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "113.909"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "2.54716e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "113.909"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "8"
+            OWNERID = "9"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "2.54717e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "1.85704e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "-1.79853e-008"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "5.77828e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "2.54716e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "114.175" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "7"
+            OWNERID = "8"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "2.54717e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "1.85704e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "-1.79853e-008"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "5.77828e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "2.54716e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-119.028"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "6"
+            OWNERID = "7"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "114.627"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "114.627"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "2.54717e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "114.627"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "114.627"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "1.85704e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "114.627"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "-1.79853e-008"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "114.627"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "114.627"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "5.77828e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "114.627"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "114.627"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "114.627"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "2.54716e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "114.627"  Y = "122.747"  Z = "-117.279" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "5"
+            OWNERID = "6"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "3.21771"  Y = "10.1835"  Z = "-1.6312" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "3.21771"  Y = "10.1835"  Z = "-1.6312" />
+                    <ROTATION  X = "0"  Y = "2.54717e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "3.21771"  Y = "10.1835"  Z = "-1.6312" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "3.21771"  Y = "10.1835"  Z = "-1.6312" />
+                    <ROTATION  X = "0"  Y = "1.85704e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "3.21771"  Y = "10.1835"  Z = "-1.6312" />
+                    <ROTATION  X = "0"  Y = "-1.79853e-008"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "3.21771"  Y = "10.1835"  Z = "-1.6312" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "3.21771"  Y = "10.1835"  Z = "-1.6312" />
+                    <ROTATION  X = "0"  Y = "5.77828e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "3.21771"  Y = "10.1835"  Z = "-1.6312" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "3.21771"  Y = "10.1835"  Z = "-1.6312" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "3.21771"  Y = "10.1835"  Z = "-1.6312" />
+                    <ROTATION  X = "0"  Y = "2.54716e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "3.21771"  Y = "10.1835"  Z = "-1.6312" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "4"
+            OWNERID = "5"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "115.725"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "115.725"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "2.54717e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "115.725"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "115.725"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "1.85704e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "115.725"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "-1.79853e-008"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "115.725"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "115.725"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "5.77828e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "115.725"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "115.725"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "115.725"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "2.54716e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "115.725"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "3"
+            OWNERID = "4"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "2.54717e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "1.85704e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "-1.79853e-008"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "5.77828e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "2.54716e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "114.78" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "2"
+            OWNERID = "3"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "2.54717e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "1.85704e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "-1.79853e-008"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "5.77828e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "2.54716e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-117.212"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "1"
+            OWNERID = "2"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "116.443"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "116.443"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "2.54717e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "116.443"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "116.443"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "1.85704e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "116.443"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "-1.79853e-008"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "116.443"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "116.443"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "5.77828e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "116.443"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "116.443"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "116.443"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "2.54716e-009"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "116.443"  Y = "9.47171"  Z = "-116.673" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "0"
+            OWNERID = "1"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-0.199236"  Y = "0"  Z = "0.483675" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-0.199236"  Y = "0"  Z = "0.483675" />
+                    <ROTATION  X = "0"  Y = "-0.0808948"  Z = "0"  W = "0.996723" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-0.199236"  Y = "0"  Z = "0.483675" />
+                    <ROTATION  X = "0"  Y = "-0.172273"  Z = "0"  W = "0.985049" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-0.199236"  Y = "0"  Z = "0.483675" />
+                    <ROTATION  X = "0"  Y = "-0.256795"  Z = "0"  W = "0.966466" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-0.199236"  Y = "0"  Z = "0.483675" />
+                    <ROTATION  X = "0"  Y = "-0.318297"  Z = "0"  W = "0.947991" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-0.199236"  Y = "0"  Z = "0.483675" />
+                    <ROTATION  X = "0"  Y = "-0.34202"  Z = "0"  W = "0.939693" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-0.199236"  Y = "0"  Z = "0.483675" />
+                    <ROTATION  X = "0"  Y = "-0.318298"  Z = "0"  W = "0.947991" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-0.199236"  Y = "0"  Z = "0.483675" />
+                    <ROTATION  X = "0"  Y = "-0.256795"  Z = "0"  W = "0.966466" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-0.199236"  Y = "0"  Z = "0.483675" />
+                    <ROTATION  X = "0"  Y = "-0.172273"  Z = "0"  W = "0.985049" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-0.199236"  Y = "0"  Z = "0.483675" />
+                    <ROTATION  X = "0"  Y = "-0.0808948"  Z = "0"  W = "0.996723" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "-0.199236"  Y = "0"  Z = "0.483675" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "19"
+            OWNERID = "19"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "39.0166"  Y = "88.0569"  Z = "-8.18957" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "18"
+            OWNERID = "18"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "406.41"  Y = "232.015"  Z = "-103.889" />
+                    <ROTATION  X = "-0.449485"  Y = "-0.503267"  Z = "-0.347401"  W = "0.651151" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "406.41"  Y = "232.015"  Z = "-103.889" />
+                    <ROTATION  X = "-0.449485"  Y = "-0.503267"  Z = "-0.347401"  W = "0.651151" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "406.41"  Y = "232.015"  Z = "-103.889" />
+                    <ROTATION  X = "-0.449485"  Y = "-0.503267"  Z = "-0.347401"  W = "0.651151" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "406.41"  Y = "232.015"  Z = "-103.889" />
+                    <ROTATION  X = "-0.449485"  Y = "-0.503267"  Z = "-0.347401"  W = "0.651151" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "406.41"  Y = "232.015"  Z = "-103.889" />
+                    <ROTATION  X = "-0.449485"  Y = "-0.503267"  Z = "-0.347401"  W = "0.651151" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "406.41"  Y = "232.015"  Z = "-103.889" />
+                    <ROTATION  X = "-0.449485"  Y = "-0.503267"  Z = "-0.347401"  W = "0.651151" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "406.41"  Y = "232.015"  Z = "-103.889" />
+                    <ROTATION  X = "-0.449485"  Y = "-0.503267"  Z = "-0.347401"  W = "0.651151" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "406.41"  Y = "232.015"  Z = "-103.889" />
+                    <ROTATION  X = "-0.449485"  Y = "-0.503267"  Z = "-0.347401"  W = "0.651151" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "406.41"  Y = "232.015"  Z = "-103.889" />
+                    <ROTATION  X = "-0.449485"  Y = "-0.503267"  Z = "-0.347401"  W = "0.651151" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "406.41"  Y = "232.015"  Z = "-103.889" />
+                    <ROTATION  X = "-0.449485"  Y = "-0.503267"  Z = "-0.347401"  W = "0.651151" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "406.41"  Y = "232.015"  Z = "-103.889" />
+                    <ROTATION  X = "-0.449485"  Y = "-0.503267"  Z = "-0.347401"  W = "0.651151" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "PRS"
+            ID = "17"
+            OWNERID = "17"
+            CONTROLLER = "LINEAR"
+            VALUE = "PRS"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "5.82614"  Y = "23.1202"  Z = "8.40524" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "5.82614"  Y = "23.1202"  Z = "8.40524" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "5.82614"  Y = "23.1202"  Z = "8.40524" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "5.82614"  Y = "23.1202"  Z = "8.40524" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "5.82614"  Y = "23.1202"  Z = "8.40524" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "5.82614"  Y = "23.1202"  Z = "8.40524" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "5.82614"  Y = "23.1202"  Z = "8.40524" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "5.82614"  Y = "23.1202"  Z = "8.40524" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "5.82614"  Y = "23.1202"  Z = "8.40524" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "5.82614"  Y = "23.1202"  Z = "8.40524" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE>
+                    <POSITION  X = "5.82614"  Y = "23.1202"  Z = "8.40524" />
+                    <ROTATION  X = "0"  Y = "0"  Z = "0"  W = "1" />
+                    <SCALE  X = "1"  Y = "1"  Z = "1" />
+                </VALUE>
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+        <D3F_CONTROLLER
+            FIELD = "Intensity"
+            ID = "16"
+            OWNERID = "16"
+            CONTROLLER = "LINEAR"
+            VALUE = "FLOAT"
+            KEYFRAMECOUNT = "11"
+        >
+            <KEYFRAME  INDEX = "0"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE  X="1" />
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "1"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE  X="1" />
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "2"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE  X="1" />
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "3"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE  X="1" />
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "4"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE  X="1" />
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "5"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE  X="1" />
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "6"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE  X="1" />
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "7"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE  X="1" />
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "8"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE  X="1" />
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "9"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE  X="1" />
+            </KEYFRAME>
+            <KEYFRAME  INDEX = "10"  TIME = "-1" >
+                <CONTROLLER/>
+                <VALUE  X="1" />
+            </KEYFRAME>
+        </D3F_CONTROLLER>
+    </D3F_CONTROLLERS>
+</D3F_SCENE>

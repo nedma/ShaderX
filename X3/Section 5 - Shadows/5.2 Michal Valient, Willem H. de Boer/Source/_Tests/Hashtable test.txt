@@ -1,0 +1,81 @@
+class CInt : public CRootClass {
+public:
+    int v;
+
+    CInt(int val) : CRootClass() { 
+        _LOG("CInt", NULL, D3_DVLEVEL6,"New Int %i", val);
+        v = val;
+    };
+
+    virtual ~CInt() {
+        _LOG("CInt", NULL, D3_DVLEVEL6,"Delete Int %i", v);
+    }
+
+};
+
+
+
+
+    //HashTable tries...
+    //TODO - vyskusat, ci funguje vsetko dobre aj ak Owns = true!!!
+    CHashTable *ht = NewObj CHashTable(true);
+    for (int i=0; i<10; i++) {
+        CInt *Intt = NewObj CInt(i);
+        ht->Add(i,*Intt);
+    }
+    _LOG("MainLoop",NULL,D3_DVLEVEL6,"Item count %i",ht->GetItemCount());
+
+    ht->GrowTable(0);
+
+    _LOG("MainLoop",NULL,D3_DVLEVEL6,"Item count %i",ht->GetItemCount());
+
+    for (int i=0; i<10; i++) {
+        CInt *Intt = NewObj CInt(i);
+        ht->Add(i,*Intt);
+    }
+
+    _LOG("MainLoop",NULL,D3_DVLEVEL6,"Item count %i",ht->GetItemCount());
+
+    for (int i=-1; i<11; i++) {
+        CInt *Intt = (CInt *)ht->Get(i);
+        if (Intt!=NULL && Intt->v!=i) _LOG("MainLoop",NULL,D3_DVLEVEL6,"Get returned wrong object exp. %i, ret %i",i,Intt->v);
+    }
+
+    _LOG("MainLoop",NULL,D3_DVLEVEL6,"Item count %i",ht->GetItemCount());
+
+    for (int i=0; i<10; i+=4) {
+        ht->Delete(i);
+    }
+
+    _LOG("MainLoop",NULL,D3_DVLEVEL6,"Item count %i",ht->GetItemCount());
+
+    for (int i=-1; i<11; i++) {
+        CInt *Intt = (CInt *)ht->Get(i);
+        if (Intt!=NULL && Intt->v!=i) _LOG("MainLoop",NULL,D3_DVLEVEL6,"Get returned wrong object exp. %i, ret %i",i,Intt->v);
+    }
+
+    for (int i=0; i<10; i+=2) {
+        CInt *Intt = (CInt *)ht->Erase(i);
+        if (Intt!=NULL && Intt->v!=i) _LOG("MainLoop",NULL,D3_DVLEVEL6,"Erase returned wrong object exp. %i, ret %i",i,Intt->v);
+        if (Intt==NULL) _LOG("MainLoop",NULL,D3_DVLEVEL6,"Erase returned NULL object for key %i",i);
+        else DeleteObj Intt;
+    }
+
+    _LOG("MainLoop",NULL,D3_DVLEVEL6,"Item count %i",ht->GetItemCount());
+
+    for (int i=-1; i<11; i++) {
+        CInt *Intt = (CInt *)ht->Get(i);
+        if (Intt!=NULL && Intt->v!=i) _LOG("MainLoop",NULL,D3_DVLEVEL6,"Get returned wrong object exp. %i, ret %i",i,Intt->v);
+    }
+
+    _LOG("MainLoop",NULL,D3_DVLEVEL6,"Item count %i",ht->GetItemCount());
+    sHashItem item;
+    int iter = ht->GetFirstItem(item);
+    while (iter>=0) {
+        _LOG("MainLoop",NULL,D3_DVLEVEL6,"Iterator returned Key %i, Value %i, Callback %i",item.Key, item.Value, item.CallbackValue);
+        iter = ht->GetNextItem(item);
+    }
+
+    DeleteObj ht;
+
+    return 0;

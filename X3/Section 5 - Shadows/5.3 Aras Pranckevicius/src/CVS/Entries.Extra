@@ -1,0 +1,12 @@
+D/math///
+D/common///
+/stdafx.cpp///
+/stdafx.h///
+/Mesh.cpp///
+D/utils///
+/Effect.h///
+/Mesh.h///
+/SHProjection.h///
+/SphericalSamples.h///
+/VisibilityCalc.h///
+/Main.cpp///

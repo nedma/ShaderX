@@ -1,0 +1,1 @@
+this is flexporter plugin to export scene from 3DS to dimension3 format

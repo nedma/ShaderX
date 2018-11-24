@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+	<META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+	<TITLE>LocalSH - demo of Fake Soft Shadows Using Precomputed Visibility Distance Functions</TITLE>
+	<LINK href="style.css" rel=stylesheet type="text/css">
+</HEAD>
+<BODY>
+
+<H2>LocalSH <span style="font-size: small">(Fake Soft Shadows Using Precomputed Visibility Distance Functions)</span></H2>
+<p>
+A companion demo for <a href='http://www.shaderx3.com'>ShaderX^3</a> article by Aras Pranckevicius.
+</p>
+
+
+<H3>The demo</H3>
+<p>
+Displays dynamic shadows in static scenes using that "Fake soft shadows..." technique. Has 5th and 2nd order SH shadows and a standard shadow-depth-map mode
+for comparison. Allows moving viewer and lightsources and some other options.
+</p>
+
+
+<H3>Requirements</H3>
+<p>
+<ul>
+<li>DirectX 9.0b (or later) runtime.</li>
+<li>Graphics card that supports Pixel Shaders 2.0 and Vertex Shaders 1.1.</li>
+<li>Tested and seems to work on ATi Radeon 9500 and up; nVidia GeForce FX.</li>
+</ul>
+</p>
+
+
+<H3>Usage</H3>
+<p>
+Run "LocalSH.exe" and try pressing keys and/or moving mouse:
+<ul>
+<li>F1 - toggle key help (displays what's written here).
+<li>Left mouse button and drag - rotate camera.
+<li>Arrows or W/A/S/D - move camera.
+<li>Q/E or PgUp/PgDn - camera up/down.
+<li>F4 - toggle 'LocalSH' technique vs. standard shadowmaps.
+<li>F5 - toggle between 5th and 2nd SH orders (25 or 4 coefficients respectively).
+<li>Space - 'fire' a short lived lightsource.
+<li>P - change active light, J/I/K/L - move active light, M - toggle active light animation.
+<li>F3 - toggle wireframe; F2 - D3D device settings; Alt-Enter - toggle fullscreen; Alt-F4 - exit.
+</ul>
+
+
+<h3>Other goodies</h3>
+Author's homepage <a href='http://www.gim.ktu.lt/nesnausk/nearaz/'>here</a>.
+
+<br><br>
+
+</body></html>

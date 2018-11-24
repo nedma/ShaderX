@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+	<META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+	<TITLE>Shaderey - Beyond3D/ATi DX9 shader competition entry</TITLE>
+	<LINK href="style.css" rel=stylesheet type="text/css">
+</HEAD>
+<BODY>
+
+<H2>Shaderey</H2>
+A Beyond3D/ATi DX9 shader competition entry (2003 Sep, some additional tweaks for ShaderX3 during 2004 May).
+
+<H3>Who (code, shaders, models, textures)</H3>
+<p>
+Aras "NeARAZ" Pranckevicius <i>(code, shaders, models, textures)</i><br>
+<A href="http://www.gim.ktu.lt/nesnausk/nearaz/">http://www.gim.ktu.lt/nesnausk/nearaz/</A><br>
+<A href="mailto:nearaz@centras.lt">nearaz@centras.lt</A>
+</p>
+
+<H3>The demo</H3>
+<p>
+Displays outdoors scene rendered in some-NPR (non photorealistic rendering) way. Plays camera animation,
+allows manual camera controls and fast-forward benchmarking mode.
+</p>
+
+<H3>Requirements</H3>
+<p>
+<ul>
+<li>DirectX 9.0a (or later) runtime.</li>
+<li>Graphics card that supports Pixel Shaders 2.0 and Vertex Shaders 1.1.</li>
+<li>64MB on graphics card is enough (for normal use). A card that supports DXT1 compressed textures is preferable.</li>
+<li>The demo can make use of Multiple Render Targets (2 of them, A8R8G8B8 format) if they are supported. They are disabled by default, see note below.</li>
+</ul>
+Note that Anisotropic filtering and/or FSAA in graphics card settings don't have much influence here (so better turn them off or to "application preference").
+</p>
+
+<H3>Usage</H3>
+<p>
+Run "shaderey.exe" and set video mode and other parameters in the dialog.
+</p>
+<p>
+For benchmarking mode, set 'Benchmark mode' checkbox in the starting dialog. After completion of whole animation loop, the
+"score" is number of frames that were rendered. It doesn't lock backbuffer to ensure full flush, though :(
+Note that at startup, some (20) frames are rendered for warming up, and don't affect the score.
+</p>
+<p>
+To enable use of Multiple Render Targets (if they are supported), set 'Use multiple render targets' checkbox in the starting dialog.
+By default MRTs are disabled - my observations suggest that they have rather big performance hit in fill-limited cases.
+</p>
+<p>
+When not in benchmarking mode, the keys are:
+<ul>
+<li>Q - turn camera animation on/off
+<li>W - wireframe on/off
+<li>Arrows/A/Z/S/X - control camera when not animating
+<li>PgUp/PgDown - control sun when not animating
+<li>Alt-F4 - exit
+</ul>
+
+<h3>For more info</h3>
+Developers: <A href="readme-dev.html">readme-dev.html</A><br>
+Idea history: <A href="readme-why.html">readme-why.html</A>.
+
+<br><br>
+
+</body></html>

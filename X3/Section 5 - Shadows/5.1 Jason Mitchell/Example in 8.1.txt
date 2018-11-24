@@ -1,0 +1,1 @@
+The example for chapter 8.1 does also cover the Poisson Shadow Blur.

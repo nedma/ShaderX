@@ -1,0 +1,26 @@
+;------------------------------------------------------------------------------
+; volume texture color grading 1.1 pixel shader
+;------------------------------------------------------------------------------
+; constants specified by the application
+;
+; input
+;	t0		= texture coordinate of original image
+;	t1.xyz	= 1, 0, 0
+;	t2.xyz	= 0, 1, 0
+;	t3.xyz	= 0, 0, 1
+;------------------------------------------------------------------------------
+
+
+; declaration of required pixel shader version
+ps_1_1
+
+;------------------------------------------------------------------------------
+; color output
+;------------------------------------------------------------------------------
+
+tex			t0												; load original color
+texm3x3pad	t1,			t0									; calculate x-component of the look-up vector
+texm3x3pad	t2,			t0									; calculate y-component
+texm3x3tex	t3,			t0									; calculate z-component and get corresponding value
+
+mov			r0,			t3									; output graded color value

@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+	<META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+	<TITLE>Shaderey - Beyond3D/ATi DX9 shader competition entry - History</TITLE>
+	<LINK href="style.css" rel=stylesheet type="text/css">
+</HEAD>
+<BODY>
+
+<H2>Shaderey</H2>
+A Beyond3D/ATi DX9 shader competition entry (2003 Sep, some additional tweaks for ShaderX3 during 2004 May); history<br>
+General readme here: <A href="readme.html">readme.html</A>.
+
+<h3>Why such demo?</h3>
+
+<p>
+The basic ideas that can come up when writing a "shader demo":
+	<ol>
+	<li>Good materials (BRDFs, etc.)<br>
+		<i>everyone's already doing this :)</i>
+	<li>Good light transport (shadows, soft shadows, radiance transfer, etc.)<br>
+		<i>ditto, though PRT-like something would be interesting</i>
+	<li>Funky things (non photorealistic, distorted renderings, etc.)
+	<li>Creative ways of using hardware (raytracing, matrix solvers, etc.)<br>
+		<i>usually requires lots of maths skills, plus really lots of creativity :(</i>
+	</ol>
+</p>
+<p>
+Now, I chose 3rd option, that is, some non-realistic rendering.
+</p>
+<p>
+Since the time of "Bzhykt" intro I was wondering whether it's possible to render the same entirely in hardware. "Bzhykt" intro is
+<A href="http://www.gim.ktu.lt/nesnausk/nearaz/projBzhykt.html">here</A> <i>(hey! don't run it! it doesn't work, crashes, and is a complete crap!)</i>.
+So, I set off for terrain, trees etc., with edges/hatches on it, and some "painterly" style. It's possible to achieve exactly the same look -- requires lots of rendertarget
+changes (similar to building a summed area table). But, alas, it didn't look good at all -- possibly due to some bugs on my part, possibly because of lack of precision
+or some other thing.
+</p>
+<p>
+All in all, the final result is this.
+</p>

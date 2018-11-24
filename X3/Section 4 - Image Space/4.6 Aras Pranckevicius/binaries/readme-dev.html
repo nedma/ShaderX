@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+	<META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+	<TITLE>Shaderey - Beyond3D/ATi DX9 shader competition entry - Development info</TITLE>
+	<LINK href="style.css" rel=stylesheet type="text/css">
+</HEAD>
+<BODY>
+
+<H2>Shaderey</H2>
+A Beyond3D/ATi DX9 shader competition entry (2003 Sep, some additional tweaks for ShaderX3 during 2004 May); development info<br>
+General readme here: <A href="readme.html">readme.html</A>.
+
+<H3>Description</H3>
+<p>
+<b>Non-shader ingredients:</b>
+<ul>
+<li>A (relatively) high-poly terrain. Note that there's no LOD on it, just culling of chunks. For water reflections, the terrain is rendered with lower detail, though.
+	Whole terrain is half million triangles, split into chunks for culling. With a small amount of work, GeoMipMapping can be implemented.</li>
+<li>Single shadow map for trees/houses, received by terrain. Terrain samples it 4 times with rotated grid for some anti-aliasing. The shadow map isn't
+	cast on entire terrain, instead, just to some "nearby viewer" portion.</li>
+<li>Simple water reflections.</li>
+<li>And, of course, simple frustum culling for the objects :)</li>
+</ul>
+
+<b>The flow:</b>
+<ol>
+<li>Render trees/houses into shadow map (1024x1024).</li>
+<li>Render all except lakes into reflection map (256x256). Lower detail for terrain.</li>
+<li>Render everything into two screen-sized rendertargets - one gets final color, another gets world space normals in RGB and eye-space
+	(kind-of) depth in A. This includes shadows, reflections and atmospheric light scattering for most of the objects (from Hoffman et al.,
+	SigGraph2002; get it at ATI's devrel site).<br>
+	If there's no MRT support, or we haven't forced it (see notes in readme.html), then do separate passes to write into color RT and normals/depth
+	RT. So this is the default (no MRT use).</li>
+<li>Downsample color RT into smaller (512x512) texture ("smallrt").</li>
+<li>Convert smallrt from RGB into HSV space and quantize HSV components. This is done via dependant volume texture lookup.
+	Distort the HSV image at color boundaries; keep the hue channel undistorted. Convert from HSV back to RGB (another volume texture).
+	Now we have smaller texture distorted in a funky way :) All this is done in a single pass, see more comments in data/fx/imgBleed.fx</li>
+<li>Detect edges in original image, and apply hatch-like pattern to some places. This operates in image space on normals/depth rendertarget that
+	was produced earlier. Normals/depth detection is similar to ATI's at SigGraph 2002. Hatching texture gets applied based on dot product of
+	normal and light direction.</li>
+<li>Now, composite the edges/hatches and smaller-distorted into backbuffer. That's all!</li>
+</ol>
+
+<b>Shaders/effects:</b>
+<ul>
+<li>Use D3DX Effects framework.</li>
+<li>Use HLSL.</li>
+<li>Vertex shaders are 1.1 everywhere (there was no need for 2.0 :))</li>
+<li>Pixel shaders are 2.0 mostly, with some simpler ones being 1.4 or 1.1.</li>
+</ul>
+<b>"Biggest" shaders:</b>
+<ul>
+<li>Terrain pixel shader: data/fx/terrain.fx
+<li>RGB->HSV, image distortion and back to RGB pixel shader: data/fx/imgBleed.fx
+<li>Edge detection/hatching pixel shader: data/fx/imgEdgeDetect.fx
+<li>Atmospheric scattering part of most vertex shaders: data/fx/_library.fx
+</ul>
+</p>
+
+<h3>The source</h3>
+<p>
+Needed:
+	<ul>
+	<li>MSVC 6.0 SP5
+	<li>DirectX 9.0 SDK, at least Summer 2003 Update.
+	<li>boost 1.30.0 libraries (<A href="http://www.boost.org/">www.boost.org</A>)
+	</ul>
+</p>
+<p>
+Caution: don't take as an example of good design or programming style!
+</p>
+<p>
+Structure:
+	<ul>
+	<li>Everything in sourcecode/ is the source -- you can safely delete it if you don't need it.
+	<li>VC project/workspace is in sourcecode/shaderey/shaderey.[dsp|dsw]
+	<li>Demo code is in sourcecode/shaderey/
+	<li>Other "utility" code is in sourcecode/dingus/ [no, not an engine! just a bunch of code :)]
+	</ul>
+
+<br>
+<br>
+</body>
+</html>
