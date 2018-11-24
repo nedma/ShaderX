@@ -1,0 +1,29 @@
+//----------------------------------------------------------------------------------------
+// Pixel shader for rendering shadowed scene
+// ---------------------------------------------------------------------------------------
+
+ps.2.0
+
+// Declare incoming registers
+dcl_2d s0
+dcl t0.xy				// coordinates	
+dcl t1.xy
+dcl t2.xy
+dcl t3.xy
+
+mov r5, c0
+texld r0, t0, s0
+add r5, r5, c1
+texld r1, t1, s0
+add r6, r5, c2
+texld r2, t2, s0
+add r5, r6, c3
+texld r3, t3, s0
+add r0, r0, r1
+add r0, r0, r2
+add r0, r0, r3
+add r5, r5, r0
+// ---------------------------------------------------------------------------------------
+// Output color
+mov oC0, r0
+

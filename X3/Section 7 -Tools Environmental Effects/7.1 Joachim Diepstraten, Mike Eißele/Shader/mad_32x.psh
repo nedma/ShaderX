@@ -1,0 +1,48 @@
+//----------------------------------------------------------------------------------------
+// Pixel shader for rendering shadowed scene
+// ---------------------------------------------------------------------------------------
+
+ps.2.0
+
+// Declare incoming registers
+dcl t0.xy				// coordinates	
+
+mov r1, c0.z
+mad r0, c0.x, c0.y, r1
+mad r0, r0, c1.x, c1.y
+mad r0, r0, c2.x, c2.y
+mad r0, r0, c3.x, c3.y
+mad r0, r0, c4.x, c4.y
+mad r0, r0, c5.x, c5.y
+mad r0, r0, c6.x, c6.y
+mad r0, r0, c7.x, c7.y
+mad r0, r0, c8.x, c8.y
+mad r0, r0, c9.x, c9.y
+mad r0, r0, c10.x, c10.y
+mad r0, r0, c11.x, c11.y
+mad r0, r0, c12.x, c12.y
+mad r0, r0, c13.x, c13.y
+mad r0, r0, c14.x, c14.y
+mad r0, r0, c15.x, c15.y
+mad r0, r0, c16.x, c16.y
+mad r0, r0, c17.x, c17.y
+mad r0, r0, c18.x, c18.y
+mad r0, r0, c19.x, c19.y
+mad r0, r0, c20.x, c20.y
+mad r0, r0, c21.x, c21.y
+mad r0, r0, c22.x, c22.y
+mad r0, r0, c23.x, c23.y
+mad r0, r0, c24.x, c24.y
+mad r0, r0, c25.x, c25.y
+mad r0, r0, c26.x, c26.y
+mad r0, r0, c27.x, c27.y
+mad r0, r0, c28.x, c28.y
+mad r0, r0, c29.x, c29.y
+mad r0, r0, c30.x, c30.y
+mad r0, r0, c31.x, c31.y
+
+
+// ---------------------------------------------------------------------------------------
+// Output color
+mov oC0, r0
+

@@ -1,0 +1,34 @@
+ps.2.0
+dcl t0.xyz // normal
+dcl t1 // light vector in world space
+dcl t2 // view vector in world space
+def c5, 0.0, 0.5, 0.0, 2.0
+def c29, 60.0, 0.0, 0.0, 0.0
+nrm r1, t0
+nrm r3, t1
+dp3_sat r4, r1, r3 // N.L
+mul r0, r4, c8
+nrm r5, t2
+dp3_sat r7, r5, r3 // L.V+
+dp3 r10, r5, r1 //N.V
+mul r2, r4.x, r10.x // N.V*N.L
+mul r2, r2, c5.w // 2*N.V*N.L
+sub r2, r2, r7.x // 2*N.V*N.L - L.V+
+pow r6, r2.x, c29.x
+max r4, r4.x, r10.x
+rcp r2, r4.x
+mul r2, r6, r2
+mul r2, r2, c7.w
+mul r2, r2.x, c7
+add r0, r0, r2
+mov oC0, r0
+
+
+
+
+
+
+
+
+
+

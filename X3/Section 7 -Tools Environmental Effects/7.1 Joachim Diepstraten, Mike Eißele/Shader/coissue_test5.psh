@@ -1,0 +1,15 @@
+ps.2.0
+mov r0, c0
+mov r1, c1
+mov r2, c2
+mov r3, c3
+mov r4, c4
+dp3 r0.r, r1, r0
+dp3 r2, r1, r2
+mul r2, r2, r3
+mul r2, r2, r4
+mul r0.r, r0.r, r0.r
+mul r0.r, r0.r, r0.r
+mul r0.r, r0.r, r0.r
+mad r0.rgb, r0.r, r2, r1
+mov oC0, r0

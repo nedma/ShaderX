@@ -1,0 +1,13 @@
+\shader\cmp.psh
+\shader\cmp_4x.psh
+\shader\cmp_pp.psh
+\shader\frc.psh
+\shader\frc_4x.psh
+\shader\lrp.psh
+\shader\lrp_4x.psh
+\shader\rcp.psh
+\shader\rcp_pp.psh
+\shader\rcp_4x.psh
+\shader\rsq.psh
+\shader\rsq_pp.psh
+\shader\rsq_4x.psh

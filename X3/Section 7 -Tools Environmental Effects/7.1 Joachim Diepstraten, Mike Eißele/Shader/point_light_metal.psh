@@ -1,0 +1,51 @@
+// Phong per Pixel Lighting 
+// c0--c3 Inverse Transpose ModelView Matrix
+// c4 Light Position .w (Falloff range)
+// c5.x 1/(Falloff range) c5.y 0.5 c5.z kd c5.w ks
+// c6 eye position
+// c7 light color
+// c8 Diffuse Material Color
+ps.2.0
+dcl t0 // normal
+dcl t1 // light vector in world space
+dcl t2 // view vector in world space
+def c5, 0.0, 0.5, 0.0, 2.0
+def c29, 24.0, 0.0, 0.0, 0.0
+// normal
+m3x3 r0.xyz, t0, c0
+// normalize normal
+nrm r1, r0
+// normalize light vector
+nrm r3, t1
+dp3_sat r4, r1, r3 // N.L
+mad r5, r7, c6.x, r4
+// diffuse part
+mul r0, r5, c8
+// specular part
+// compute view vector
+nrm r5, t2
+// compute reflection vector (PHONG)
+dp3_sat r7, r5, r3 // L.V+
+dp3 r10, r5, r1 //N.V
+mul r2, r4.x, r10.x // N.V*N.L
+mul r2, r2, c5.w // 2*N.V*N.L
+sub r2, r2, r7.x // 2*N.V*N.L - L.V+
+pow r6, r2.x, c29.x
+//texld r6, r2, s1
+max r4, r4.x, r10.x
+rcp r2, r4.x
+mul r2, r6, r2
+mul r2, r2, c7.w
+mul r2, r2.x, c7
+add r0, r0, r2
+mov oC0, r0
+
+
+
+
+
+
+
+
+
+

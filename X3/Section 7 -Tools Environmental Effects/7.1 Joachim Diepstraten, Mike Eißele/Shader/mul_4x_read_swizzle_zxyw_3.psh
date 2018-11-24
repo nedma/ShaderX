@@ -1,0 +1,10 @@
+ps.2.0
+// Declare incoming registers
+dcl t0.xy
+mov r0, c0
+mul r1, r0.zxyw, c1.x
+mul r0, r1.zxyw, r0.x
+mul r1, r0.zxyw, r1.x
+mul r0, r1.zxyw, r0.x
+mov oC0, r0
+

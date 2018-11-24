@@ -1,0 +1,94 @@
+ps.2.0
+dcl_2d s0
+dcl_2d s1
+dcl_2d s2
+dcl_2d s3
+dcl_cube s4
+dcl_2d s5
+dcl_2d s6
+dcl t0 // normal
+dcl t1 // point in camera space
+dcl t2 // tangent
+dcl t3 // binormal
+dcl t4 // texture coordinates for bump
+// c4 = Halfway vector
+// c5 = eye position
+// c6 = Light vector
+// c7 = L.V+ 
+// c9.x n+2/2*PI c9.y (1.0f-MTD)+1.0
+// c10 = specular colors 
+// c11 = diffuse colors  +dw
+def c8, 2.0, 1.0, 0.5, 0.0
+def c13, 0.2, 2.0, 0.0, 0.01
+def c14, 0.5, 0.0, 1.0, 0.2
+def c15, 4.0, 1.0, 0.2, 0.0
+// compute height of fragment
+texld r6, t4, s3
+sub r11, c8.z, r6.x
+// check waterlevel
+texld r7, t4, s6
+sub r5, r11, r7.x
+add r10, r5, c14.x
+abs r6, r10
+texld r6, r6, s5
+cmp r9, r10, c14.z, r6.x
+cmp r11, r10, c15.y, c15.x
+add r7, r10, c14.w
+cmp r2, r7, c13.y, c13.x
+nrm r1, t0
+texld r0, t4, s1
+mul r0, r0, r2
+mov r2.w, c13.z
+mov r3.w, c13.z
+mad r2, r0.x, r1, t2
+mad r3, r0.y, r1, t3
+crs r4.xyz, r2, r3
+m3x3 r0.xyz, r4, c0
+// normalized normal
+nrm r1, r0 
+// compute view vector
+sub r2, c5, t1
+// normalize view vector
+nrm r3, r2
+dp3 r5, r1, c6 // N.L
+dp3 r4, r1, r3 // N.V
+mul r0, r5.x, r4.x
+mul r0, r0, c8.x
+dp3 r6, c6, r3
+max r6, r6.x, c13.z
+sub r0, r0, r6
+texld r3, r0, s0
+max r4, r5.x, r4.x
+rcp r0, r4.x
+mul r3, r3.x, r0
+mul r3, r3, c9.x
+mul r3, r3, c10
+mul r2, c11, r5.x
+
+// add water lighting factors
+mul r3, r3, r11
+mul r2, r2, r9
+add r3, r2, r3
+// usage mask
+texld r4, t4, s2
+mul r4, r4, c9.y
+sub r5, r4, c8.y
+cmp r4, r5, r4, c8.y
+rcp r5, r4.x
+mul r3, r3, r5
+// compute view vector
+sub r2, c5, t1
+// normalize view vector
+nrm r8, r2
+// calculate reflection vector
+dp3 r4, r1, r8 // N.V
+rcp r2, r4.x // 1/N.V
+mul r4, r8, r2.x // V * 1/N.V
+mad r6, c11.x, r1, -r8 // 2 * N - 1 / N.V * V
+texld r6, r6, s4
+abs r7, r10
+sub r0, c14.w, r7
+cmp r7, r0, r7, c14.w
+mad r4, r7, r6, r3
+cmp r3, r10, r3, r4
+mov oC0, r3
